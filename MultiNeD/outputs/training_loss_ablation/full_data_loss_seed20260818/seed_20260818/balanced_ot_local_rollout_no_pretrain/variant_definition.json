@@ -1,0 +1,12 @@
+{
+  "changed_from_notebook_reference": [
+    "drift_pretraining"
+  ],
+  "drift_initialization": "random",
+  "drift_loss_mode": "none_before_reaction",
+  "drift_pretrained": false,
+  "drift_supervision": "none_before_reaction",
+  "reaction_distribution_loss": "balanced_sinkhorn",
+  "reaction_loss_mode": "local_rollout",
+  "reaction_trains_drift": true
+}

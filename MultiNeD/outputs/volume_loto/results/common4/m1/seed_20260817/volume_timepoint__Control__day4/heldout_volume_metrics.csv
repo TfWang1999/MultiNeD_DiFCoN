@@ -1,0 +1,2 @@
+split_id,holdout_kind,treatment_clean,day,model,initial_day,initial_volume,predicted_volume,observed_mean_volume,absolute_error,squared_error,n_observed,cv_seed,fold_index
+volume_timepoint__Control__day4,volume_timepoint,Control,4.0,reaction,1.0,98.08,137.19615173339844,106.42,30.776151733398436,947.1715155171636,5,20260817,0

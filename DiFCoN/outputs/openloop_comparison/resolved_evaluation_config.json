@@ -1,0 +1,136 @@
+{
+  "experiment_id": "E2a",
+  "description": "Closed-loop vs validation-derived open-loop; test cohort was not used to construct schedules.",
+  "lambda_d": 1.0,
+  "seeds_requested": [
+    2031,
+    2032,
+    2033
+  ],
+  "seeds_completed": [
+    2031,
+    2032,
+    2033
+  ],
+  "cohort_dir": "DiFCoN/cohorts",
+  "n_particles": 96,
+  "strategy_order": [
+    "No treatment",
+    "Fixed Combine",
+    "Validation-derived open-loop",
+    "Closed-loop"
+  ],
+  "per_seed": [
+    {
+      "model_seed": 2031,
+      "run_dir": "DiFCoN/outputs/dose_weight_sweep/dose_weight_1p0_seed_2031",
+      "checkpoint": "DiFCoN/outputs/dose_weight_sweep/dose_weight_1p0_seed_2031/checkpoints/policy.pt",
+      "rollout_config": {
+        "start_day": 1.0,
+        "end_day": 17.0,
+        "decision_dt": 1.0,
+        "internal_dt": 0.1,
+        "history_length": 5,
+        "concentration_cap": 10.0,
+        "feature_names": [
+          "score_precursor",
+          "score_activation",
+          "score_eff_early",
+          "score_eff_cytox",
+          "score_dysfunction",
+          "previous_action_pd1",
+          "previous_action_b41bb",
+          "log_C_abs",
+          "log_C_rel",
+          "log_N_abs",
+          "log_N_rel",
+          "activity_scaled",
+          "P_conc_scaled",
+          "B_conc_scaled",
+          "remaining_budget_fraction",
+          "time_fraction"
+        ],
+        "reference_C": 6000.0,
+        "reference_N": 10.0,
+        "reference_activity": 2.0
+      },
+      "n_particles": 96,
+      "validation_rollout_seed": 52031,
+      "test_rollout_seed": 102031
+    },
+    {
+      "model_seed": 2032,
+      "run_dir": "DiFCoN/outputs/dose_weight_sweep/dose_weight_1p0_seed_2032",
+      "checkpoint": "DiFCoN/outputs/dose_weight_sweep/dose_weight_1p0_seed_2032/checkpoints/policy.pt",
+      "rollout_config": {
+        "start_day": 1.0,
+        "end_day": 17.0,
+        "decision_dt": 1.0,
+        "internal_dt": 0.1,
+        "history_length": 5,
+        "concentration_cap": 10.0,
+        "feature_names": [
+          "score_precursor",
+          "score_activation",
+          "score_eff_early",
+          "score_eff_cytox",
+          "score_dysfunction",
+          "previous_action_pd1",
+          "previous_action_b41bb",
+          "log_C_abs",
+          "log_C_rel",
+          "log_N_abs",
+          "log_N_rel",
+          "activity_scaled",
+          "P_conc_scaled",
+          "B_conc_scaled",
+          "remaining_budget_fraction",
+          "time_fraction"
+        ],
+        "reference_C": 6000.0,
+        "reference_N": 10.0,
+        "reference_activity": 2.0
+      },
+      "n_particles": 96,
+      "validation_rollout_seed": 52031,
+      "test_rollout_seed": 102031
+    },
+    {
+      "model_seed": 2033,
+      "run_dir": "DiFCoN/outputs/dose_weight_sweep/dose_weight_1p0_seed_2033",
+      "checkpoint": "DiFCoN/outputs/dose_weight_sweep/dose_weight_1p0_seed_2033/checkpoints/policy.pt",
+      "rollout_config": {
+        "start_day": 1.0,
+        "end_day": 17.0,
+        "decision_dt": 1.0,
+        "internal_dt": 0.1,
+        "history_length": 5,
+        "concentration_cap": 10.0,
+        "feature_names": [
+          "score_precursor",
+          "score_activation",
+          "score_eff_early",
+          "score_eff_cytox",
+          "score_dysfunction",
+          "previous_action_pd1",
+          "previous_action_b41bb",
+          "log_C_abs",
+          "log_C_rel",
+          "log_N_abs",
+          "log_N_rel",
+          "activity_scaled",
+          "P_conc_scaled",
+          "B_conc_scaled",
+          "remaining_budget_fraction",
+          "time_fraction"
+        ],
+        "reference_C": 6000.0,
+        "reference_N": 10.0,
+        "reference_activity": 2.0
+      },
+      "n_particles": 96,
+      "validation_rollout_seed": 52031,
+      "test_rollout_seed": 102031
+    }
+  ]
+}

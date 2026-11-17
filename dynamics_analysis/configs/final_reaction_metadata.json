@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "reaction_checkpoint": {
+    "path": "MultiNeD/outputs/reaction_coupled_run/reaction_coupled_model.pt"
+  },
+  "drift_model_config": {
+    "z_dim": 5,
+    "treatment_dim": 2,
+    "time_dim": 1,
+    "hidden_dim": 256,
+    "n_layers": 3,
+    "max_drift": 10.0,
+    "pk": {
+      "enabled": true,
+      "delta_pd1": 0.23,
+      "delta_b41bb": 0.1,
+      "pd1_dose_days": [
+        1.0,
+        4.0
+      ],
+      "b41bb_dose_days": [
+        2.0
+      ],
+      "pd1_dose_amount": 1.0,
+      "b41bb_dose_amount": 1.0,
+      "normalize_to_unit_peak": true
+    }
+  },
+  "integrator": {
+    "time_scale": 15.0,
+    "n_steps_per_day": 10
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "cohort_name": "lhs",
+  "model": {
+    "drift_checkpoint": "MultiNeD/outputs/notebook_drift_run/drift_model.pt",
+    "reaction_checkpoint": "MultiNeD/outputs/reaction_coupled_run/reaction_coupled_model.pt"
+  },
+  "cohort_sizes": {
+    "train": 128,
+    "validation": 32,
+    "test": 32
+  },
+  "lhs_seeds": {
+    "train": 3301,
+    "validation": 5301,
+    "test": 7301
+  },
+  "sampling_ranges": {
+    "C0_fraction_K": {
+      "low": 0.3,
+      "high": 0.7,
+      "mapping": "linear"
+    },
+    "N0_scale": {
+      "low": 0.3,
+      "high": 2.0,
+      "mapping": "log"
+    },
+    "tumor_r_scale": {
+      "low": 0.8,
+      "high": 1.8,
+      "mapping": "log"
+    },
+    "eta_scale": {
+      "low": 0.12,
+      "high": 1.2,
+      "mapping": "log"
+    },
+    "source_rate_scale": {
+      "low": 0.4,
+      "high": 1.3,
+      "mapping": "log"
+    },
+    "lambda_act_scale": {
+      "low": 0.3,
+      "high": 1.2,
+      "mapping": "log"
+    }
+  },
+  "fitted_baseline": {
+    "tumor_k": 5999.998046875,
+    "initial_n": 1.0
+  },
+  "provenance": {
+    "reference_run": "MultiNeD/outputs/reaction_coupled_run",
+    "initial_condition_rule": {
+      "C0": "C0_fraction_K * fitted_baseline.tumor_k",
+      "N0": "N0_scale * fitted_baseline.initial_n"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+variant,mae,rmse,mean_signed_error,treatment_count,timepoint_count,seed_count
+balanced_ot_local_only_pretrained,12.483462521992035,23.7712005184281,3.7515097833058197,4,72,3
+balanced_ot_local_rollout_no_pretrain,19.351133803715786,33.08714574275083,1.6662251263573067,4,72,3
+balanced_ot_local_rollout_pretrained,20.526600355118045,36.339021649870745,5.4023636820959675,4,72,3
+balanced_ot_rollout_only_pretrained,21.0160742508419,36.118047440011715,3.373493099515401,4,72,3
+nearest_neighbor_mse_local_rollout_pretrained,19.576775682237418,34.6438180708067,3.6545505632673008,4,72,3

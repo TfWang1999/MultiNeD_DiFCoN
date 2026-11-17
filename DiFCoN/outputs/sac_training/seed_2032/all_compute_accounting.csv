@@ -1,0 +1,2 @@
+strategy,method_group,patient_count,wall_seconds,forward_evaluations,gradient_evaluations,marginal_seconds_per_patient,method,environment_steps,episodes,model_seed
+SAC,sac,32,4378.310926110949,48000,47001,0.9304866035090527,sac,48000,3000,2032

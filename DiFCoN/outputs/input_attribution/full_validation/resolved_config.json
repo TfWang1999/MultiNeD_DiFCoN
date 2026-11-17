@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "profile": "full",
+  "description": "Input Jacobian, integrated gradients, and history interventions for frozen direct-dose CNN policies.",
+  "cohort": "validation",
+  "device": "cuda:0",
+  "cohort_dir": "cohorts",
+  "output_dir": "outputs/input_attribution/full_validation",
+  "policy_runs": [
+    {
+      "model_seed": 2031,
+      "run_dir": "outputs/dose_weight_sweep/dose_weight_1p0_seed_2031"
+    },
+    {
+      "model_seed": 2032,
+      "run_dir": "outputs/dose_weight_sweep/dose_weight_1p0_seed_2032"
+    },
+    {
+      "model_seed": 2033,
+      "run_dir": "outputs/dose_weight_sweep/dose_weight_1p0_seed_2033"
+    }
+  ],
+  "max_patients": 32,
+  "n_particles": 96,
+  "evaluation_rollout_seed": 1220260901,
+  "integrated_gradient_steps": 32,
+  "history_interventions": [
+    "current_only",
+    "reverse_past"
+  ],
+  "config_source": "configs/analysis/input_attribution.json"
+}

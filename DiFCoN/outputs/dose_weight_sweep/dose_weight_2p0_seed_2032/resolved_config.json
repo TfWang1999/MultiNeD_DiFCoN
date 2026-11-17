@@ -1,0 +1,76 @@
+{
+  "schema_version": 2,
+  "study_name": "dose_weight_sweep_reproduce_6b7040e",
+  "training_profile": "direct_dose_lhs_configured",
+  "model": {
+    "drift_checkpoint": "MultiNeD/outputs/notebook_drift_run/drift_model.pt",
+    "reaction_checkpoint": "MultiNeD/outputs/reaction_coupled_run/reaction_coupled_model.pt"
+  },
+  "policy": {
+    "history_length": 5,
+    "feature_names": null,
+    "hidden_dim": 64,
+    "n_conv_blocks": 2,
+    "dropout": 0.05,
+    "initial_dose": 0.0625,
+    "output_weight_std": 0.001
+  },
+  "cohort": {
+    "source_run": "cohorts",
+    "n_train": 128,
+    "n_validation": 32,
+    "n_test": 32
+  },
+  "seeds": {
+    "model": 2032,
+    "batch_order": 2032,
+    "train_rollout": 12032,
+    "validation_rollout": 52031,
+    "test_rollout": 102031
+  },
+  "simulation": {
+    "start_day": 1.0,
+    "end_day": 17.0,
+    "decision_dt": 1.0,
+    "internal_dt": 0.1,
+    "n_particles_train": 48,
+    "n_particles_test": 96
+  },
+  "training": {
+    "n_epochs": 200,
+    "batch_size": 8,
+    "learning_rate": 0.0002,
+    "weight_decay": 1e-05,
+    "grad_clip": 1.0,
+    "eval_every": 5,
+    "eval_patients": 32,
+    "lr_reduction_factor": 0.5,
+    "lr_patience": 4,
+    "lr_threshold": 0.0001,
+    "min_learning_rate": 1e-06
+  },
+  "loss": {
+    "final_tumor_weight": 1.0,
+    "tumor_auc_weight": 1.0,
+    "functional_activity_weight": 0.5,
+    "smoothness_weight": 0.02,
+    "total_dose_weight": 2.0,
+    "efficiency_weight": 0.1,
+    "late_window_days": 3.0,
+    "functional_retention": 0.9,
+    "min_functional_activity": 0.0,
+    "efficiency_endpoint_benefit_weight": 1.0,
+    "efficiency_auc_benefit_weight": 1.0,
+    "efficiency_pseudo_dose": 0.1,
+    "efficiency_reference": 1.0
+  },
+  "runtime": {
+    "device": "cuda:0"
+  },
+  "output": {
+    "root": "outputs",
+    "run_name": "dose_weight_2p0_seed_2032",
+    "checkpoint_filename": "policy.pt",
+    "run_dir": "outputs/dose_weight_sweep/dose_weight_2p0_seed_2032"
+  }
+}

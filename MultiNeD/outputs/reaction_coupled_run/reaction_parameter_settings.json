@@ -1,0 +1,180 @@
+{
+  "parameter_settings": {
+    "tumor_r": {
+      "mode": "optimize",
+      "bounds": [
+        0.005,
+        2.0
+      ],
+      "init": 0.31
+    },
+    "tumor_k": {
+      "mode": "optimize",
+      "bounds": [
+        2000.0,
+        6000.0
+      ],
+      "init": 4000.0
+    },
+    "killing": {
+      "mode": "optimize",
+      "bounds": [
+        0.01,
+        0.3
+      ],
+      "init": 0.1
+    },
+    "source_rate": {
+      "mode": "optimize",
+      "bounds": [
+        0.0,
+        0.8
+      ],
+      "init": 0.2
+    },
+    "lambda_act": {
+      "mode": "optimize",
+      "bounds": [
+        0.0,
+        15.0
+      ],
+      "init": 0.3
+    },
+    "death_rate": {
+      "mode": "fixed",
+      "bounds": [
+        0.005,
+        1.0
+      ],
+      "value": 0.18
+    },
+    "stim_k": {
+      "mode": "optimize",
+      "bounds": [
+        30.0,
+        500.0
+      ],
+      "init": 150.0
+    },
+    "f_b_coeff": {
+      "mode": "optimize",
+      "bounds": [
+        0.0,
+        15.0
+      ],
+      "init": 3.0
+    },
+    "g_b_coeff": {
+      "mode": "optimize",
+      "bounds": [
+        0.0,
+        15.0
+      ],
+      "init": 3.0
+    },
+    "g_pd1_coeff": {
+      "mode": "optimize",
+      "bounds": [
+        0.0,
+        15.0
+      ],
+      "init": 1.5
+    },
+    "K_P": {
+      "mode": "fixed",
+      "bounds": [
+        0.1,
+        1.0
+      ],
+      "value": 0.5
+    },
+    "K_B": {
+      "mode": "fixed",
+      "bounds": [
+        0.1,
+        1.0
+      ],
+      "value": 0.5
+    }
+  },
+  "applied": {
+    "trainable": [
+      "tumor_r",
+      "tumor_k",
+      "killing",
+      "source_rate",
+      "lambda_act",
+      "stim_k",
+      "f_b_coeff",
+      "g_b_coeff",
+      "g_pd1_coeff"
+    ],
+    "fixed": [
+      "death_rate",
+      "K_P",
+      "K_B",
+      "killing_weights"
+    ],
+    "bounds": {
+      "tumor_r": [
+        0.005,
+        2.0
+      ],
+      "tumor_k": [
+        2000.0,
+        6000.0
+      ],
+      "killing": [
+        0.01,
+        0.3
+      ],
+      "source_rate": [
+        0.0,
+        0.8
+      ],
+      "lambda_act": [
+        0.0,
+        15.0
+      ],
+      "stim_k": [
+        30.0,
+        500.0
+      ],
+      "f_b_coeff": [
+        0.0,
+        15.0
+      ],
+      "g_b_coeff": [
+        0.0,
+        15.0
+      ],
+      "g_pd1_coeff": [
+        0.0,
+        15.0
+      ]
+    },
+    "values": {
+      "tumor_r": 0.3100000023841858,
+      "tumor_k": 3999.99853515625,
+      "killing": 0.10000000149011612,
+      "source_rate": 0.19999998807907104,
+      "lambda_act": 0.30000001192092896,
+      "death_rate": 0.17999999225139618,
+      "stim_k": 150.00001525878906
+    },
+    "reaction_effect_values": {
+      "f_b_coeff": 3.0,
+      "g_b_coeff": 3.0,
+      "g_pd1_coeff": 1.5,
+      "K_P": 0.4999999701976776,
+      "K_B": 0.4999999701976776
+    },
+    "killing_weights": [
+      0.20000000298023224,
+      0.6000000238418579,
+      0.800000011920929,
+      1.0,
+      0.4000000059604645
+    ]
+  }
+}

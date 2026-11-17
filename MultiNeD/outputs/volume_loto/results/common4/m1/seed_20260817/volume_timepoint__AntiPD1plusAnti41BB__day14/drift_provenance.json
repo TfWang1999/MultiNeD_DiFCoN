@@ -1,0 +1,7 @@
+{
+  "effective_checkpoint": "MultiNeD/outputs/notebook_drift_run/drift_model.pt",
+  "heldout_z_groups": [],
+  "refit": false,
+  "source_checkpoint": "MultiNeD/outputs/notebook_drift_run/drift_model.pt",
+  "strategy": "matching_z_only"
+}

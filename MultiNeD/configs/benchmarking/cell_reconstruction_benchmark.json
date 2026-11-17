@@ -1,0 +1,78 @@
+{
+  "schema_version": 2,
+  "profile": "full",
+  "description": "Six-method full-data rollout reconstruction from the shared Control day 1 baseline.",
+  "base_validation_config": "MultiNeD/configs/validation/volume_loto_base.json",
+  "output_root": "MultiNeD/outputs/cell_reconstruction_benchmark",
+  "seeds": [
+    20260816,
+    20260817,
+    20260818
+  ],
+  "methods": [
+    "persistence",
+    "treatment_linear_shift",
+    "entropic_ot_barycentric",
+    "project_balanced_sinkhorn_drift",
+    "mioflow",
+    "tigon"
+  ],
+  "splits": {
+    "mode": "distribution_full_data_joint",
+    "expected_counts": {
+      "training_group_count": 21,
+      "training_transition_count": 20,
+      "evaluation_target_count": 20
+    }
+  },
+  "evaluation": {
+    "n_particles": 256,
+    "sinkhorn_epsilon": 0.08,
+    "sinkhorn_iters": 60,
+    "energy_max_points": 512,
+    "device": "auto"
+  },
+  "method_settings": {
+    "treatment_linear_shift": {
+      "ridge": 0.001,
+      "time_scale": 15.0
+    },
+    "entropic_ot_barycentric": {
+      "epsilon": 0.08,
+      "n_support": 256,
+      "knn": 8
+    },
+    "project_balanced_sinkhorn_drift": {
+      "use_paper_pretraining": true
+    },
+    "mioflow": {
+      "python_env": "MIOFLOW_PYTHON",
+      "external_repo_env": "MIOFLOW_REPO",
+      "epochs": 300,
+      "batch_size": 256,
+      "max_points_per_timepoint": 512,
+      "hidden_dim": 64,
+      "learning_rate": 0.001,
+      "lambda_ot": 1.0,
+      "lambda_density": 0.1,
+      "lambda_energy": 0.01,
+      "energy_time_steps": 10,
+      "grad_clip": 1.0,
+      "device": "cuda:0",
+      "timeout_seconds": 86400
+    },
+    "tigon": {
+      "python_env": "TIGON_PYTHON",
+      "external_repo_env": "TIGON_REPO",
+      "iterations": 300,
+      "num_samples": 64,
+      "max_points_per_timepoint": 256,
+      "hidden_dim": 32,
+      "n_hiddens": 4,
+      "activation": "Tanh",
+      "learning_rate": 0.003,
+      "device": "cuda:0",
+      "timeout_seconds": 86400
+    }
+  }
+}

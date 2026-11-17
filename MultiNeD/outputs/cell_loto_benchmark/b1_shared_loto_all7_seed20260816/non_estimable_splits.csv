@@ -1,0 +1,15 @@
+treatment,target_day,reason
+Control,10.0,no_matching_z_distribution
+Control,14.0,no_matching_z_distribution
+Control,17.0,no_matching_z_distribution
+Anti-PD1,10.0,no_matching_z_distribution
+Anti-PD1,14.0,no_matching_z_distribution
+Anti-PD1,17.0,no_matching_z_distribution
+Anti-41BB,4.0,no_matching_z_distribution
+Anti-41BB,10.0,no_matching_z_distribution
+Anti-41BB,14.0,no_matching_z_distribution
+Anti-41BB,17.0,no_matching_z_distribution
+Anti-PD1+Anti-41BB,4.0,no_matching_z_distribution
+Anti-PD1+Anti-41BB,10.0,no_matching_z_distribution
+Anti-PD1+Anti-41BB,14.0,no_matching_z_distribution
+Anti-PD1+Anti-41BB,17.0,no_matching_z_distribution

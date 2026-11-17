@@ -1,0 +1,49 @@
+{
+  "schema_version": 2,
+  "study_name": "dose_weight_sweep_reproduce_6b7040e",
+  "run_name": "dose_weight_0p0_seed_2033",
+  "cohort": "validation",
+  "policy_type": "direct_dose",
+  "strategy_label": "Optimal",
+  "loss_weights": {
+    "final_tumor_weight": 1.0,
+    "tumor_auc_weight": 1.0,
+    "functional_activity_weight": 0.5,
+    "smoothness_weight": 0.02,
+    "total_dose_weight": 0.0,
+    "efficiency_weight": 0.1,
+    "late_window_days": 3.0,
+    "functional_retention": 0.9,
+    "min_functional_activity": 0.0,
+    "efficiency_endpoint_benefit_weight": 1.0,
+    "efficiency_auc_benefit_weight": 1.0,
+    "efficiency_pseudo_dose": 0.1,
+    "efficiency_reference": 1.0,
+    "eps": 1e-08
+  },
+  "strategy_means": [
+    {
+      "strategy": "Optimal",
+      "loss": 1.308668224606663,
+      "final_C_rel": 0.4937465230160607,
+      "tumor_auc_rel": 0.7658434799069346,
+      "total_dose": 2.9999999955688232,
+      "loss_late_activity": 1.3405105099081993,
+      "loss_functional_activity_loss": 0.008842943277613813,
+      "loss_smoothness_loss": 0.025241334282327443,
+      "loss_drug_efficiency": 0.23884194565471262
+    }
+  ],
+  "direct_dose_means": {
+    "strategy": "Optimal",
+    "loss": 1.308668224606663,
+    "final_C_rel": 0.4937465230160607,
+    "tumor_auc_rel": 0.7658434799069346,
+    "total_dose": 2.9999999955688232,
+    "loss_late_activity": 1.3405105099081993,
+    "loss_functional_activity_loss": 0.008842943277613813,
+    "loss_smoothness_loss": 0.025241334282327443,
+    "loss_drug_efficiency": 0.23884194565471262
+  },
+  "n_patients": 32
+}

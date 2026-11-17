@@ -1,0 +1,61 @@
+variant,variant_label,seed,treatment_clean,volume_r2,ss_res,ss_tot,timepoint_count
+balanced_ot_local_only_pretrained,"Balanced OT: local only, pretrained",20260816,Anti-41BB,0.972615644554952,134.53836587747023,4912.96448979592,6
+balanced_ot_local_only_pretrained,"Balanced OT: local only, pretrained",20260816,Anti-PD1,0.9700450340442877,2246.9710836516415,75011.6387037037,6
+balanced_ot_local_only_pretrained,"Balanced OT: local only, pretrained",20260816,Anti-PD1+Anti-41BB,0.9850431981615411,27.374633147690066,1830.2464285714282,6
+balanced_ot_local_only_pretrained,"Balanced OT: local only, pretrained",20260816,Control,0.9654077762854468,13088.043320327202,378352.18193333346,6
+balanced_ot_local_rollout_no_pretrain,"Balanced OT: local + rollout, no pretraining",20260816,Anti-41BB,0.835398217725607,808.6827112712123,4912.96448979592,6
+balanced_ot_local_rollout_no_pretrain,"Balanced OT: local + rollout, no pretraining",20260816,Anti-PD1,0.9330405437246854,5022.738541920346,75011.6387037037,6
+balanced_ot_local_rollout_no_pretrain,"Balanced OT: local + rollout, no pretraining",20260816,Anti-PD1+Anti-41BB,0.9473021478843426,96.45005562806718,1830.2464285714282,6
+balanced_ot_local_rollout_no_pretrain,"Balanced OT: local + rollout, no pretraining",20260816,Control,0.9456383057022231,20567.865651156753,378352.18193333346,6
+balanced_ot_local_rollout_pretrained,"Balanced OT: local + rollout, pretrained",20260816,Anti-41BB,0.8940751723252727,520.4049169536875,4912.96448979592,6
+balanced_ot_local_rollout_pretrained,"Balanced OT: local + rollout, pretrained",20260816,Anti-PD1,0.9310971956941774,5168.512262260365,75011.6387037037,6
+balanced_ot_local_rollout_pretrained,"Balanced OT: local + rollout, pretrained",20260816,Anti-PD1+Anti-41BB,0.9158696076868218,153.97935006550753,1830.2464285714282,6
+balanced_ot_local_rollout_pretrained,"Balanced OT: local + rollout, pretrained",20260816,Control,0.9304015186764658,26332.737268005523,378352.18193333346,6
+balanced_ot_rollout_only_pretrained,"Balanced OT: rollout only, pretrained",20260816,Anti-41BB,0.814823540355631,909.7653705789122,4912.96448979592,6
+balanced_ot_rollout_only_pretrained,"Balanced OT: rollout only, pretrained",20260816,Anti-PD1,0.9298546063046019,5261.720928608256,75011.6387037037,6
+balanced_ot_rollout_only_pretrained,"Balanced OT: rollout only, pretrained",20260816,Anti-PD1+Anti-41BB,0.9345491399669843,119.79120282235546,1830.2464285714282,6
+balanced_ot_rollout_only_pretrained,"Balanced OT: rollout only, pretrained",20260816,Control,0.933271492643412,25246.876355519573,378352.18193333346,6
+nearest_neighbor_mse_local_rollout_pretrained,Nearest-neighbour MSE: local + rollout,20260816,Anti-41BB,0.8770332108999345,604.1314682728458,4912.96448979592,6
+nearest_neighbor_mse_local_rollout_pretrained,Nearest-neighbour MSE: local + rollout,20260816,Anti-PD1,0.9282813461857466,5379.733748230776,75011.6387037037,6
+nearest_neighbor_mse_local_rollout_pretrained,Nearest-neighbour MSE: local + rollout,20260816,Anti-PD1+Anti-41BB,0.9398507006381643,110.08804033807345,1830.2464285714282,6
+nearest_neighbor_mse_local_rollout_pretrained,Nearest-neighbour MSE: local + rollout,20260816,Control,0.9387041076953107,23191.434597029853,378352.18193333346,6
+balanced_ot_local_only_pretrained,"Balanced OT: local only, pretrained",20260817,Anti-41BB,0.9867925453329371,64.8877557798694,4912.96448979592,6
+balanced_ot_local_only_pretrained,"Balanced OT: local only, pretrained",20260817,Anti-PD1,0.9859882581641769,1051.0437161983348,75011.6387037037,6
+balanced_ot_local_only_pretrained,"Balanced OT: local only, pretrained",20260817,Anti-PD1+Anti-41BB,0.9948169312596763,9.486293051017768,1830.2464285714282,6
+balanced_ot_local_only_pretrained,"Balanced OT: local only, pretrained",20260817,Control,0.9765364615218672,8877.480979078247,378352.18193333346,6
+balanced_ot_local_rollout_no_pretrain,"Balanced OT: local + rollout, no pretraining",20260817,Anti-41BB,0.8273871588647594,848.0407589802212,4912.96448979592,6
+balanced_ot_local_rollout_no_pretrain,"Balanced OT: local + rollout, no pretraining",20260817,Anti-PD1,0.9369059042032757,4732.791518240758,75011.6387037037,6
+balanced_ot_local_rollout_no_pretrain,"Balanced OT: local + rollout, no pretraining",20260817,Anti-PD1+Anti-41BB,0.9405534583569046,108.80182053319791,1830.2464285714282,6
+balanced_ot_local_rollout_no_pretrain,"Balanced OT: local + rollout, no pretraining",20260817,Control,0.9477811465054268,19757.11715772885,378352.18193333346,6
+balanced_ot_local_rollout_pretrained,"Balanced OT: local + rollout, pretrained",20260817,Anti-41BB,0.8978027852279342,502.0912871312059,4912.96448979592,6
+balanced_ot_local_rollout_pretrained,"Balanced OT: local + rollout, pretrained",20260817,Anti-PD1,0.9387890829233612,4591.531196475196,75011.6387037037,6
+balanced_ot_local_rollout_pretrained,"Balanced OT: local + rollout, pretrained",20260817,Anti-PD1+Anti-41BB,0.9378907583417151,113.67521772635573,1830.2464285714282,6
+balanced_ot_local_rollout_pretrained,"Balanced OT: local + rollout, pretrained",20260817,Control,0.9348509987767482,24649.266763594725,378352.18193333346,6
+balanced_ot_rollout_only_pretrained,"Balanced OT: rollout only, pretrained",20260817,Anti-41BB,0.8176313895280132,895.9705073022958,4912.96448979592,6
+balanced_ot_rollout_only_pretrained,"Balanced OT: rollout only, pretrained",20260817,Anti-PD1,0.9387347282639977,4595.608428545236,75011.6387037037,6
+balanced_ot_rollout_only_pretrained,"Balanced OT: rollout only, pretrained",20260817,Anti-PD1+Anti-41BB,0.9325812254414311,123.39297135448298,1830.2464285714282,6
+balanced_ot_rollout_only_pretrained,"Balanced OT: rollout only, pretrained",20260817,Control,0.9367907993493101,23915.33898445039,378352.18193333346,6
+nearest_neighbor_mse_local_rollout_pretrained,Nearest-neighbour MSE: local + rollout,20260817,Anti-41BB,0.8782226578051954,598.2877578648015,4912.96448979592,6
+nearest_neighbor_mse_local_rollout_pretrained,Nearest-neighbour MSE: local + rollout,20260817,Anti-PD1,0.9387448292262114,4594.850738817103,75011.6387037037,6
+nearest_neighbor_mse_local_rollout_pretrained,Nearest-neighbour MSE: local + rollout,20260817,Anti-PD1+Anti-41BB,0.943854555173717,102.75999987385869,1830.2464285714282,6
+nearest_neighbor_mse_local_rollout_pretrained,Nearest-neighbour MSE: local + rollout,20260817,Control,0.9423484787156147,21812.578869723184,378352.18193333346,6
+balanced_ot_local_only_pretrained,"Balanced OT: local only, pretrained",20260818,Anti-41BB,0.9841488043191353,77.8763615008948,4912.96448979592,6
+balanced_ot_local_only_pretrained,"Balanced OT: local only, pretrained",20260818,Anti-PD1,0.974210324959527,1934.525786421888,75011.6387037037,6
+balanced_ot_local_only_pretrained,"Balanced OT: local only, pretrained",20260818,Anti-PD1+Anti-41BB,0.9856514676056295,26.261350170038064,1830.2464285714282,6
+balanced_ot_local_only_pretrained,"Balanced OT: local only, pretrained",20260818,Control,0.9652531447766332,13146.548489082481,378352.18193333346,6
+balanced_ot_local_rollout_no_pretrain,"Balanced OT: local + rollout, no pretraining",20260818,Anti-41BB,0.8234062178213656,867.5989809623866,4912.96448979592,6
+balanced_ot_local_rollout_no_pretrain,"Balanced OT: local + rollout, no pretraining",20260818,Anti-PD1,0.9364356776927443,4768.063979357637,75011.6387037037,6
+balanced_ot_local_rollout_no_pretrain,"Balanced OT: local + rollout, no pretraining",20260818,Anti-PD1+Anti-41BB,0.9283885464235748,131.06660715306072,1830.2464285714282,6
+balanced_ot_local_rollout_no_pretrain,"Balanced OT: local + rollout, no pretraining",20260818,Control,0.9441963160510219,21113.445582013977,378352.18193333346,6
+balanced_ot_local_rollout_pretrained,"Balanced OT: local + rollout, pretrained",20260818,Anti-41BB,0.9009771068578528,486.49595768422495,4912.96448979592,6
+balanced_ot_local_rollout_pretrained,"Balanced OT: local + rollout, pretrained",20260818,Anti-PD1,0.9290443673506712,5322.498280284171,75011.6387037037,6
+balanced_ot_local_rollout_pretrained,"Balanced OT: local + rollout, pretrained",20260818,Anti-PD1+Anti-41BB,0.8743561933695261,229.959128357544,1830.2464285714282,6
+balanced_ot_local_rollout_pretrained,"Balanced OT: local + rollout, pretrained",20260818,Control,0.9286204407880383,27006.611973285264,378352.18193333346,6
+balanced_ot_rollout_only_pretrained,"Balanced OT: rollout only, pretrained",20260818,Anti-41BB,0.7974342136285493,995.1985152905238,4912.96448979592,6
+balanced_ot_rollout_only_pretrained,"Balanced OT: rollout only, pretrained",20260818,Anti-PD1,0.9365145732381082,4762.145895213476,75011.6387037037,6
+balanced_ot_rollout_only_pretrained,"Balanced OT: rollout only, pretrained",20260818,Anti-PD1+Anti-41BB,0.8874328275953206,206.02566526804867,1830.2464285714282,6
+balanced_ot_rollout_only_pretrained,"Balanced OT: rollout only, pretrained",20260818,Control,0.9289203876110631,26893.12643832988,378352.18193333346,6
+nearest_neighbor_mse_local_rollout_pretrained,Nearest-neighbour MSE: local + rollout,20260818,Anti-41BB,0.8925275569933266,528.0082961234018,4912.96448979592,6
+nearest_neighbor_mse_local_rollout_pretrained,Nearest-neighbour MSE: local + rollout,20260818,Anti-PD1,0.9415687074523547,4383.027005574388,75011.6387037037,6
+nearest_neighbor_mse_local_rollout_pretrained,Nearest-neighbour MSE: local + rollout,20260818,Anti-PD1+Anti-41BB,0.9187523072155457,148.7032995484162,1830.2464285714282,6
+nearest_neighbor_mse_local_rollout_pretrained,Nearest-neighbour MSE: local + rollout,20260818,Control,0.9340287309862312,24960.373576270325,378352.18193333346,6

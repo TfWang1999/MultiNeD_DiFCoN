@@ -1,0 +1,5 @@
+cohort,predictor,n,events,risk_score_definition,harrell_c_index,comparable_pairs,concordant_pairs,discordant_pairs,tied_risk_pairs,tied_time_pairs,outer_fold_weighted_c_index,outer_fold_comparable_pairs
+All tumors,CD8score_Control,455,220,-CD8score_Control; higher fixed marker is prespecified as protective,0.6263472340763383,50381,31556,18825,0,15,,
+All tumors,Five-program Ridge Cox OOF,455,220,nested-CV held-out linear predictor; higher value is higher risk,0.6229530973978286,50381,31385,18996,0,15,0.6207724634780869,9994.0
+Metastatic only,CD8score_Control,359,194,-CD8score_Control; higher fixed marker is prespecified as protective,0.6148191241802412,37816,23250,14566,0,9,,
+Metastatic only,Five-program Ridge Cox OOF,359,194,nested-CV held-out linear predictor; higher value is higher risk,0.6159826528453565,37816,23294,14522,0,9,0.6139975958327768,7487.0

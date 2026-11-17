@@ -1,0 +1,102 @@
+{
+  "schema_version": 2,
+  "profile": "full",
+  "description": "Unified seven-method shared treatment-conditioned Reaction-style LOTO benchmark.",
+  "base_validation_config": "MultiNeD/configs/validation/volume_loto_base.json",
+  "output_root": "MultiNeD/outputs/cell_loto_benchmark",
+  "seeds": [
+    20260816
+  ],
+  "methods": [
+    "persistence",
+    "treatment_linear_shift",
+    "entropic_ot_barycentric",
+    "project_balanced_sinkhorn_drift",
+    "mioflow",
+    "tigon",
+    "official_ot_cfm"
+  ],
+  "splits": {
+    "mode": "shared_conditional_loto",
+    "source_group": "day1__Control",
+    "expected_fold_count": 6,
+    "expected_target_groups": [
+      "day4__Control",
+      "day6__Control",
+      "day4__AntiPD1",
+      "day6__AntiPD1",
+      "day6__Anti41BB",
+      "day6__AntiPD1plusAnti41BB"
+    ]
+  },
+  "evaluation": {
+    "n_particles": 256,
+    "sinkhorn_epsilon": 0.08,
+    "sinkhorn_iters": 60,
+    "energy_max_points": 512,
+    "device": "auto"
+  },
+  "method_settings": {
+    "treatment_linear_shift": {
+      "ridge": 0.001,
+      "time_scale": 15.0
+    },
+    "entropic_ot_barycentric": {
+      "epsilon": 0.08,
+      "n_support": 256,
+      "knn": 8
+    },
+    "project_balanced_sinkhorn_drift": {
+      "n_epochs": 800,
+      "n_max": 256,
+      "sinkhorn_iters": 60,
+      "print_every": 20,
+      "device": "auto"
+    },
+    "mioflow": {
+      "python_env": "MIOFLOW_PYTHON",
+      "external_repo_env": "MIOFLOW_REPO",
+      "epochs": 300,
+      "batch_size": 256,
+      "max_points_per_timepoint": 512,
+      "hidden_dim": 64,
+      "learning_rate": 0.001,
+      "lambda_ot": 1.0,
+      "lambda_density": 0.1,
+      "lambda_energy": 0.01,
+      "energy_time_steps": 10,
+      "grad_clip": 1.0,
+      "device": "cuda:0",
+      "timeout_seconds": 86400
+    },
+    "tigon": {
+      "python_env": "TIGON_PYTHON",
+      "external_repo_env": "TIGON_REPO",
+      "iterations": 300,
+      "num_samples": 64,
+      "max_points_per_timepoint": 256,
+      "hidden_dim": 32,
+      "n_hiddens": 4,
+      "activation": "Tanh",
+      "learning_rate": 0.003,
+      "device": "cuda:0",
+      "timeout_seconds": 86400
+    },
+    "official_ot_cfm": {
+      "python_env": "OTCFM_PYTHON",
+      "external_repo_env": "OTCFM_REPO",
+      "epochs": 300,
+      "pairs_per_transition": 256,
+      "hidden_dim": 64,
+      "depth": 2,
+      "learning_rate": 0.001,
+      "weight_decay": 1e-05,
+      "sigma": 0.0,
+      "grad_clip": 5.0,
+      "integration_steps_per_day": 4,
+      "device": "cuda:0",
+      "print_every": 25,
+      "timeout_seconds": 86400
+    }
+  }
+}

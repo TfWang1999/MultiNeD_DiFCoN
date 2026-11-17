@@ -1,0 +1,40 @@
+{
+  "cv_seed": 20260817,
+  "fold_index": 12,
+  "heldout_days": [
+    4.0
+  ],
+  "heldout_groups": [],
+  "heldout_treatments": [
+    "Anti-PD1+Anti-41BB"
+  ],
+  "kind": "volume_timepoint",
+  "split_id": "volume_timepoint__AntiPD1plusAnti41BB__day4",
+  "train_group_count": 21,
+  "train_transition_count": 20,
+  "train_volume_row_count": 143,
+  "z_standardization": {
+    "mean": [
+      0.5720666572550239,
+      0.6896904052468205,
+      0.5220226393051807,
+      0.5396978283656513,
+      0.5917463811342882
+    ],
+    "n_training_cells": 52731,
+    "scale": [
+      0.2975804443144953,
+      0.29536839482505434,
+      0.32078765048688396,
+      0.3352404013809361,
+      0.28878431742813354
+    ],
+    "z_cols": [
+      "P_precursor_zstd",
+      "Activation_zstd",
+      "Eff_Early_zstd",
+      "Eff_Cytox_zstd",
+      "Dysf_zstd"
+    ]
+  }
+}

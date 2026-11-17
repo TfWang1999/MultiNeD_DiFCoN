@@ -1,0 +1,13 @@
+{
+  "epochs": 300,
+  "batch_size": 256,
+  "max_points_per_timepoint": 512,
+  "hidden_dim": 64,
+  "learning_rate": 0.001,
+  "lambda_ot": 1.0,
+  "lambda_density": 0.1,
+  "lambda_energy": 0.01,
+  "energy_time_steps": 10,
+  "grad_clip": 1.0,
+  "device": "cuda:0"
+}

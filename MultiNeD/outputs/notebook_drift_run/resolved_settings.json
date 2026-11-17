@@ -1,0 +1,48 @@
+{
+  "model": {
+    "z_dim": 5,
+    "treatment_dim": 2,
+    "time_dim": 1,
+    "hidden_dim": 256,
+    "n_layers": 3,
+    "max_drift": 10.0,
+    "pk": {
+      "enabled": true,
+      "delta_pd1": 0.23,
+      "delta_b41bb": 0.1,
+      "pd1_dose_days": [
+        1.0,
+        4.0
+      ],
+      "b41bb_dose_days": [
+        2.0
+      ],
+      "pd1_dose_amount": 1.0,
+      "b41bb_dose_amount": 1.0,
+      "normalize_to_unit_peak": true
+    }
+  },
+  "training": {
+    "n_epochs": 800,
+    "n_max": 256,
+    "lr": 0.001,
+    "weight_decay": 1e-05,
+    "sinkhorn_epsilon": 0.08,
+    "sinkhorn_iters": 60,
+    "loss_mode": "local_rollout",
+    "rollout_loss_weight": 0.5,
+    "rollout_n_max": 256,
+    "rollout_anchor": "control_day1",
+    "n_steps_per_day": 10,
+    "time_scale": 15.0,
+    "drift_l2_weight": 1e-05,
+    "grad_clip": 5.0,
+    "seed": 2026,
+    "device": "cuda:0",
+    "lr_patience": 20,
+    "lr_factor": 0.5,
+    "min_lr": 5e-07,
+    "print_every": 10
+  },
+  "seed": 2026
+}

@@ -1,0 +1,28 @@
+{
+  "method": "official_ot_cfm",
+  "external_commit": "3fd278f9ef2f02e17e107e5769130b6cb44803e2",
+  "external_package_version": "1.0.7",
+  "official_matcher_class": "ExactOptimalTransportConditionalFlowMatcher",
+  "official_matcher_unmodified": true,
+  "trainable_parameters": 5061,
+  "training_group_count": 20,
+  "training_transition_count": 19,
+  "prediction_target_count": 1,
+  "global_joint_fit": true,
+  "one_shared_parameter_model": true,
+  "treatment_conditioned": true,
+  "conditioning_variables": [
+    "P",
+    "B",
+    "physical_time"
+  ],
+  "raw_treatment_conditioning": true,
+  "physical_time_velocity": true,
+  "tau_velocity_divided_by_dt": true,
+  "coupling_scope": "within_each_observed_transition",
+  "evaluation_task_manifest_separated": true,
+  "normalization_scope": "training_groups_only",
+  "heldout_target_used_for_training": false,
+  "pk_module_used": false,
+  "input_space": "predefined program-score state space"
+}

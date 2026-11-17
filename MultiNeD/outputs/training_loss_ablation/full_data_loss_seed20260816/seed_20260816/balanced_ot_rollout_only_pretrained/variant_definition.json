@@ -1,0 +1,13 @@
+{
+  "changed_from_notebook_reference": [
+    "drift_loss_mode",
+    "reaction_loss_mode"
+  ],
+  "drift_initialization": "full_data_refit",
+  "drift_loss_mode": "rollout",
+  "drift_pretrained": true,
+  "drift_supervision": "balanced_sinkhorn",
+  "reaction_distribution_loss": "balanced_sinkhorn",
+  "reaction_loss_mode": "rollout",
+  "reaction_trains_drift": true
+}

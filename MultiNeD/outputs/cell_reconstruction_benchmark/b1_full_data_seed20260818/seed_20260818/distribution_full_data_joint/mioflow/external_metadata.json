@@ -1,0 +1,23 @@
+{
+  "method": "mioflow",
+  "external_commit": "36365403d0f23cc3ad1065781c7331bf81debf4e",
+  "trainable_parameters": 5061,
+  "training_group_count": 21,
+  "training_transition_count": 20,
+  "prediction_target_count": 20,
+  "global_joint_fit": true,
+  "treatment_conditioned": true,
+  "conditioning_variables": [
+    "P",
+    "B",
+    "time"
+  ],
+  "evaluation_task_manifest_separated": true,
+  "conditional_adapter_extension": "official ODEFunc depth and train_mioflow loss/optimizer loop retained; velocity input extended from (z,time) to (z,time,P,B)",
+  "official_training_loop_reused": true,
+  "official_implementation_unmodified": false,
+  "same_day_treatment_snapshots_merged": false,
+  "one_shared_parameter_model": true,
+  "gaga_embedding_used": false,
+  "input_space": "predefined program-score state space"
+}

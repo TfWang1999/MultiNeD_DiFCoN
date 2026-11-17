@@ -1,0 +1,27 @@
+{
+  "dataset": "TCGA-SKCM",
+  "expression_source": "UCSC Xena GDC hub, TCGA-SKCM STAR-FPKM",
+  "expression_unit": "log2(FPKM + 1), supplied by Xena",
+  "tumor_sample_codes": {
+    "01": "Primary Tumor",
+    "06": "Metastatic",
+    "07": "Additional Metastatic"
+  },
+  "patient_deduplication": "prefer sample code 06, then 07, then 01; lexical sample-ID tie-break",
+  "gene_standardization": "within all selected tumors, gene-wise Z-score, ddof=0",
+  "program_gene_source": "../../data/mouse/program_weights/Fig1e_program_top_genes.csv",
+  "genes_per_source_program": 50,
+  "ortholog_source": "HGNC HCOP human_mouse_hcop_fifteen_column.txt.gz",
+  "ortholog_identifier": "human_ensembl_gene",
+  "ortholog_weight_rule": "split each mouse-gene weight equally across all expressed human orthologs, then renormalize covered weights within each source program",
+  "program_standardization": "within all selected tumors, Z-score, ddof=0",
+  "cd8score_alpha_source": "../../dynamics_analysis/outputs/robustness/dynamic_importance_by_delta.csv",
+  "cd8score_alpha_filter": {
+    "treatment": "Control",
+    "delta_sd": 0.5,
+    "column": "alpha_mean"
+  },
+  "analysis_cohorts": ["All tumors", "Metastatic only"],
+  "cox_ties": "efron",
+  "km_cutoff": "analysis-cohort median"
+}

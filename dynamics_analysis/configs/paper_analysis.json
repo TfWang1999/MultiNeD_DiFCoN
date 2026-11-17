@@ -1,0 +1,6 @@
+{
+  "reaction_checkpoint": "MultiNeD/outputs/reaction_coupled_run/reaction_coupled_model.pt",
+  "final_reaction_metadata": "dynamics_analysis/configs/final_reaction_metadata.json",
+  "device": "cuda",
+  "cpu_threads": 4
+}

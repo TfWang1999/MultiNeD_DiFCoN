@@ -1,0 +1,5 @@
+cohort,score,group,median_cutpoint,n,events,km_median_os_days,logrank_chi_square,logrank_p_value,split_rule
+All tumors,CD8score_Control,Low,-0.021289560205702926,227,128,1780.0,23.351815223244838,1.3491612974343062e-06,High >= cohort median; Low < cohort median
+All tumors,CD8score_Control,High,-0.021289560205702926,228,92,3683.0,23.351815223244838,1.3491612974343062e-06,High >= cohort median; Low < cohort median
+Metastatic only,CD8score_Control,Low,-0.0061579649193114275,179,120,2005.0,18.70229968180142,1.5279809584433608e-05,High >= cohort median; Low < cohort median
+Metastatic only,CD8score_Control,High,-0.0061579649193114275,180,74,4507.0,18.70229968180142,1.5279809584433608e-05,High >= cohort median; Low < cohort median

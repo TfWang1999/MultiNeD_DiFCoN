@@ -1,0 +1,24 @@
+transition_id,source_group,target_group,day0,day1,dt,P,B,transition_type,use_for_training,loss_weight,note
+day1__Control__to__day2__Control,day1__Control,day2__Control,1.0,2.0,1.0,0,0,control_longitudinal,True,1.0,Natural OT1 tumor time-course under Control condition.
+day1__Control__to__day2__AntiPD1,day1__Control,day2__AntiPD1,1.0,2.0,1.0,1,0,pd1_initial_from_control,True,0.8,Initial Anti-PD1 transition; day1 Anti-PD1 group is unavailable.
+day2__Control__to__day3__Control,day2__Control,day3__Control,2.0,3.0,1.0,0,0,control_longitudinal,True,1.0,Natural OT1 tumor time-course under Control condition.
+day2__AntiPD1__to__day3__AntiPD1,day2__AntiPD1,day3__AntiPD1,2.0,3.0,1.0,1,0,pd1_longitudinal,True,1.0,Anti-PD1 longitudinal OT1 tumor time-course.
+day3__Control__to__day4__Control,day3__Control,day4__Control,3.0,4.0,1.0,0,0,control_longitudinal,True,1.0,Natural OT1 tumor time-course under Control condition.
+day3__AntiPD1__to__day4__AntiPD1,day3__AntiPD1,day4__AntiPD1,3.0,4.0,1.0,1,0,pd1_longitudinal,True,1.0,Anti-PD1 longitudinal OT1 tumor time-course.
+day3__Anti41BB__to__day6__Anti41BB,day3__Anti41BB,day6__Anti41BB,3.0,6.0,3.0,0,1,anti41bb_day3_to_day6_weak,True,0.25,Weak training transition because day3 Anti-41BB has small sample size.
+day3__AntiPD1plusAnti41BB__to__day6__AntiPD1plusAnti41BB,day3__AntiPD1plusAnti41BB,day6__AntiPD1plusAnti41BB,3.0,6.0,3.0,1,1,combo_day3_to_day6_weak,True,0.4,Weak training transition for combination treatment.
+day4__Control__to__day5__Control,day4__Control,day5__Control,4.0,5.0,1.0,0,0,control_longitudinal,True,1.0,Natural OT1 tumor time-course under Control condition.
+day4__AntiPD1__to__day5__AntiPD1,day4__AntiPD1,day5__AntiPD1,4.0,5.0,1.0,1,0,pd1_longitudinal,True,1.0,Anti-PD1 longitudinal OT1 tumor time-course.
+day5__Control__to__day6__Control,day5__Control,day6__Control,5.0,6.0,1.0,0,0,control_longitudinal,True,1.0,Natural OT1 tumor time-course under Control condition.
+day5__AntiPD1__to__day6__AntiPD1,day5__AntiPD1,day6__AntiPD1,5.0,6.0,1.0,1,0,pd1_longitudinal,True,1.0,Anti-PD1 longitudinal OT1 tumor time-course.
+day6__Control__to__day9__Control,day6__Control,day9__Control,6.0,9.0,3.0,0,0,control_longitudinal,True,1.0,Natural OT1 tumor time-course under Control condition.
+day6__AntiPD1__to__day9__AntiPD1,day6__AntiPD1,day9__AntiPD1,6.0,9.0,3.0,1,0,pd1_longitudinal,True,1.0,Anti-PD1 longitudinal OT1 tumor time-course.
+day9__Control__to__day12__Control,day9__Control,day12__Control,9.0,12.0,3.0,0,0,control_longitudinal,True,1.0,Natural OT1 tumor time-course under Control condition.
+day9__AntiPD1__to__day12__AntiPD1,day9__AntiPD1,day12__AntiPD1,9.0,12.0,3.0,1,0,pd1_longitudinal,True,1.0,Anti-PD1 longitudinal OT1 tumor time-course.
+day12__Control__to__day15__Control,day12__Control,day15__Control,12.0,15.0,3.0,0,0,control_longitudinal,True,1.0,Natural OT1 tumor time-course under Control condition.
+day12__AntiPD1__to__day15__AntiPD1,day12__AntiPD1,day15__AntiPD1,12.0,15.0,3.0,1,0,pd1_longitudinal,True,1.0,Anti-PD1 longitudinal OT1 tumor time-course.
+day3__Control__to__day3__Anti41BB,day3__Control,day3__Anti41BB,3.0,3.0,0.0,0,1,day3_endpoint_control_to_anti41bb,False,0.0,Endpoint comparison only.
+day3__Control__to__day3__AntiPD1plusAnti41BB,day3__Control,day3__AntiPD1plusAnti41BB,3.0,3.0,0.0,1,1,day3_endpoint_control_to_combo,False,0.0,Endpoint comparison only.
+day6__Control__to__day6__Anti41BB,day6__Control,day6__Anti41BB,6.0,6.0,0.0,0,1,day6_endpoint_control_to_anti41bb,False,0.0,Endpoint comparison only.
+day6__Control__to__day6__AntiPD1plusAnti41BB,day6__Control,day6__AntiPD1plusAnti41BB,6.0,6.0,0.0,1,1,day6_endpoint_control_to_combo,False,0.0,Endpoint comparison only.
+day6__AntiPD1__to__day6__AntiPD1plusAnti41BB,day6__AntiPD1,day6__AntiPD1plusAnti41BB,6.0,6.0,0.0,1,1,day6_endpoint_pd1_to_combo,False,0.0,Endpoint comparison only.

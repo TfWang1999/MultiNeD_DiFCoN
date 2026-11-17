@@ -1,0 +1,193 @@
+{
+  "status": "passed",
+  "config": {
+    "reaction_checkpoint": "MultiNeD/outputs/reaction_coupled_run/reaction_coupled_model.pt",
+    "final_reaction_metadata": "dynamics_analysis/configs/final_reaction_metadata.json",
+    "device": "cuda:0",
+    "cpu_threads": 4,
+    "drift_checkpoint": "MultiNeD/outputs/notebook_drift_run/drift_model.pt",
+    "inputs": "dynamics_analysis/mechanism_aligned_dynamics/inputs",
+    "intervention_days": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "abs_deltas": [
+      0.5,
+      0.25,
+      1.0
+    ]
+  },
+  "model": {
+    "model_weights_source": "MultiNeD/outputs/reaction_coupled_run/reaction_coupled_model.pt",
+    "checkpoint_loaded_strictly": true,
+    "standalone_drift_weights_loaded": false,
+    "model_configuration_source": "MultiNeD/outputs/notebook_drift_run/drift_model.pt",
+    "drift_model_config": {
+      "z_dim": 5,
+      "treatment_dim": 2,
+      "time_dim": 1,
+      "hidden_dim": 256,
+      "n_layers": 3,
+      "max_drift": 10.0,
+      "pk": {
+        "enabled": true,
+        "delta_pd1": 0.23,
+        "delta_b41bb": 0.1,
+        "pd1_dose_days": [
+          1.0,
+          4.0
+        ],
+        "b41bb_dose_days": [
+          2.0
+        ],
+        "pd1_dose_amount": 1.0,
+        "b41bb_dose_amount": 1.0,
+        "normalize_to_unit_peak": true
+      }
+    },
+    "reaction_config": {
+      "n_epochs": 600,
+      "n_particles": 512,
+      "n_inflow_particles": 1,
+      "dt": 0.1,
+      "lr": 0.01,
+      "drift_lr": 0.001,
+      "weight_decay": 1e-05,
+      "loss_mode": "local_rollout",
+      "z_loss_weight": 1,
+      "volume_loss_weight": 2,
+      "train_drift": true,
+      "sinkhorn_epsilon": 0.08,
+      "sinkhorn_iters": 60,
+      "reaction_effect": {
+        "f_b_coeff": 1.0,
+        "g_b_coeff": 1.0,
+        "g_pd1_coeff": 1.0,
+        "pd1_k": 1.0,
+        "b41bb_k": 1.0,
+        "eps": 1e-08,
+        "learnable": true
+      },
+      "stim_k": 150.00001525878906,
+      "parameter_bounds": {
+        "tumor_r": [
+          0.005,
+          2.0
+        ],
+        "tumor_k": [
+          2000.0,
+          6000.0
+        ],
+        "killing": [
+          0.01,
+          0.3
+        ],
+        "source_rate": [
+          0.0,
+          0.8
+        ],
+        "lambda_act": [
+          0.0,
+          15.0
+        ],
+        "stim_k": [
+          30.0,
+          500.0
+        ],
+        "f_b_coeff": [
+          0.0,
+          15.0
+        ],
+        "g_b_coeff": [
+          0.0,
+          15.0
+        ],
+        "g_pd1_coeff": [
+          0.0,
+          15.0
+        ]
+      },
+      "z_transform_params": {
+        "P_precursor_zstd": {
+          "dim": 0,
+          "lo": -1.6948299050331115,
+          "hi": 2.4954656839370664
+        },
+        "Activation_zstd": {
+          "dim": 1,
+          "lo": -2.0159467220306397,
+          "hi": 2.1864580154418936
+        },
+        "Eff_Early_zstd": {
+          "dim": 2,
+          "lo": -1.5216174840927124,
+          "hi": 2.8651981115341174
+        },
+        "Eff_Cytox_zstd": {
+          "dim": 3,
+          "lo": -1.5054649472236634,
+          "hi": 2.889764976501463
+        },
+        "Dysf_zstd": {
+          "dim": 4,
+          "lo": -1.821829581260681,
+          "hi": 2.605154490470886
+        }
+      },
+      "lr_scheduler_factor": 0.5,
+      "lr_scheduler_patience": 30,
+      "min_lr": 1e-07,
+      "device": "cuda:0",
+      "print_every": 20
+    },
+    "pk_config": {
+      "enabled": true,
+      "delta_pd1": 0.23,
+      "delta_b41bb": 0.1,
+      "pd1_dose_days": [
+        1.0,
+        4.0
+      ],
+      "b41bb_dose_days": [
+        2.0
+      ],
+      "pd1_dose_amount": 1.0,
+      "b41bb_dose_amount": 1.0,
+      "normalize_to_unit_peak": true
+    },
+    "integrator": {
+      "time_scale": 15.0,
+      "n_steps_per_day": 10
+    },
+    "killing_weights": [
+      0.20000000298023224,
+      0.6000000238418579,
+      0.800000011920929,
+      1.0,
+      0.4000000059604645
+    ],
+    "activity_method": "training.coupled_dynamics.ReactionCoupledModel.effector_activity",
+    "positive_reaction_parameters": {
+      "tumor_r": 0.267547070980072,
+      "tumor_k": 5999.99755859375,
+      "killing": 0.10646218061447144,
+      "source_rate": 0.07847801595926285,
+      "lambda_act": 0.17877641320228577,
+      "death_rate": 0.17999999225139618,
+      "stim_k": 252.56101989746094
+    },
+    "reaction_effect_state": {
+      "f_b_coeff": 2.2707204818725586,
+      "g_b_coeff": 2.472456932067871,
+      "g_pd1_coeff": 1.386934518814087,
+      "pd1_k_raw": -0.43275216221809387,
+      "b41bb_k_raw": -0.43275216221809387
+    },
+    "device": "cuda:0"
+  },
+  "metric_rows": 2160
+}

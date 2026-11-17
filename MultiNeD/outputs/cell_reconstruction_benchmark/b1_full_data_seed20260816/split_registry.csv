@@ -1,0 +1,2 @@
+split_id,kind,prediction_scope,source_group,source_day,global_joint_fit,treatment_conditioned,conditioning_variables,training_treatments,training_days,train_group_count,train_transition_count,evaluation_target_count
+distribution_full_data_joint,full_data_joint,in_sample_rollout_from_control_day1,day1__Control,1.0,True,True,"['P', 'B', 'time']","['Anti-41BB', 'Anti-PD1', 'Anti-PD1+Anti-41BB', 'Control']","[1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 9.0, 12.0, 15.0]",21,20,20

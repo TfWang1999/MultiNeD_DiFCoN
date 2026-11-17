@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "implementation_revision": "paper_model",
+  "profile": "full",
+  "description": "Full-B16 in-sample loss, rollout and pretraining ablations without held-out groups, conditions or time points.",
+  "base_validation_config": "MultiNeD/configs/validation/volume_loto_base.json",
+  "output_root": "MultiNeD/outputs/training_loss_ablation",
+  "notebook_reference": {
+    "path": "MultiNeD/notebooks/02_calibrate_MultiNeD.ipynb",
+    "drift_initialization": "load outputs/notebook_drift_run/drift_model.pt",
+    "q_in": "load outputs/reaction_coupled_run/q_in_precursor_empirical.npy",
+    "q_in_random_state_used_to_build_saved_array": 2026,
+    "reaction_train_drift": true,
+    "policy": "Only the named ablation component may differ from this reference."
+  },
+  "device": "auto",
+  "seeds": [
+    20260816,
+    20260817,
+    20260818
+  ],
+  "variants": [
+    "balanced_ot_local_rollout_pretrained",
+    "balanced_ot_local_only_pretrained",
+    "balanced_ot_rollout_only_pretrained",
+    "balanced_ot_local_rollout_no_pretrain",
+    "nearest_neighbor_mse_local_rollout_pretrained"
+  ],
+  "drift": {
+    "n_epochs": 800,
+    "n_max": 256,
+    "lr": 0.001,
+    "weight_decay": 1e-05,
+    "sinkhorn_epsilon": 0.08,
+    "sinkhorn_iters": 60,
+    "loss_mode": "local_rollout",
+    "rollout_loss_weight": 0.5,
+    "rollout_n_max": 256,
+    "n_steps_per_day": 10,
+    "time_scale": 15.0,
+    "drift_l2_weight": 1e-05,
+    "grad_clip": 5.0,
+    "lr_patience": 20,
+    "lr_factor": 0.5,
+    "min_lr": 5e-07,
+    "print_every": 50,
+    "device": "auto"
+  },
+  "reaction": {
+    "n_epochs": 600,
+    "n_particles": 512,
+    "dt": 0.1,
+    "lr": 0.01,
+    "drift_lr": 0.001,
+    "weight_decay": 1e-05,
+    "z_loss_weight": 1.0,
+    "volume_loss_weight": 2.0,
+    "sinkhorn_epsilon": 0.08,
+    "sinkhorn_iters": 60,
+    "loss_mode": "local_rollout",
+    "train_drift": true,
+    "stim_k": 150.0,
+    "lr_scheduler_factor": 0.5,
+    "lr_scheduler_patience": 30,
+    "min_lr": 1e-07,
+    "print_every": 20,
+    "device": "auto"
+  },
+  "evaluation": {
+    "n_particles": 512,
+    "energy_max_points": 512
+  }
+}

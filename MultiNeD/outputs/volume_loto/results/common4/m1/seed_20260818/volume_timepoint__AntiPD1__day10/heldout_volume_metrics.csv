@@ -1,0 +1,2 @@
+split_id,holdout_kind,treatment_clean,day,model,initial_day,initial_volume,predicted_volume,observed_mean_volume,absolute_error,squared_error,n_observed,cv_seed,fold_index
+volume_timepoint__AntiPD1__day10,volume_timepoint,Anti-PD1,10.0,reaction,1.0,68.60000000000001,154.8339080810547,148.03333333333333,6.800574747721356,46.24781689934539,6,20260818,5

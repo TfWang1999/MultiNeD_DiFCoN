@@ -1,0 +1,30 @@
+{
+  "global_seed": 2300,
+  "rollout_random_states": {
+    "state": 2300,
+    "tumour": 2400
+  },
+  "evaluation_order": [
+    "state",
+    "tumour"
+  ],
+  "device": "cuda:0",
+  "n_time": 121,
+  "z_cols": [
+    "P_precursor_zstd",
+    "Activation_zstd",
+    "Eff_Early_zstd",
+    "Eff_Cytox_zstd",
+    "Dysf_zstd"
+  ],
+  "rows": {
+    "reaction_volume": 678,
+    "tumour_volume": 678,
+    "tumour_doses": 6,
+    "state_summary": 105
+  },
+  "checkpoints": [
+    "MultiNeD/outputs/notebook_drift_run/drift_model.pt",
+    "MultiNeD/outputs/reaction_coupled_run/reaction_coupled_model.pt"
+  ]
+}

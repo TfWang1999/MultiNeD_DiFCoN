@@ -1,0 +1,21 @@
+# Tested direct dependencies (Python 3.11).
+--extra-index-url https://download.pytorch.org/whl/nightly/cu128
+
+torch==2.12.0.dev20260408+cu128
+numpy==1.26.4
+pandas==2.3.3
+scipy==1.17.1
+scikit-learn==1.8.0
+POT==0.9.6.post1
+matplotlib==3.8.4
+seaborn==0.13.2
+openpyxl==3.1.5
+statsmodels==0.14.6
+ipykernel==7.2.0
+IPython==9.13.0
+matplotlib-inline==0.2.2
+nbformat==5.10.4
+nbclient==0.10.4
+jupyter-client==8.8.0
+torchdiffeq==0.2.5
+tqdm==4.67.3

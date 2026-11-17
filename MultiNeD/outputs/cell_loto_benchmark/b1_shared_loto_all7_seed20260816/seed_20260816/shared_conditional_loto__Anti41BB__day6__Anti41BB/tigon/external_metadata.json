@@ -1,0 +1,28 @@
+{
+  "method": "tigon",
+  "external_commit": "838c17dce2687147dbc51e36bd837c31d4dc5d20",
+  "expected_release": "v1.0.0",
+  "trainable_parameters": 6054,
+  "training_group_count": 20,
+  "training_transition_count": 19,
+  "training_trajectory_count": 4,
+  "prediction_target_count": 1,
+  "global_joint_fit": true,
+  "treatment_conditioned": true,
+  "conditioning_variables": [
+    "P",
+    "B",
+    "time"
+  ],
+  "evaluation_task_manifest_separated": true,
+  "allow_disconnected_training_trajectories": true,
+  "conditional_adapter_extension": "official TIGON velocity/growth layer depth and per-trajectory train_model objective retained; shared velocity/growth inputs extended to (z,time,P,B), with mean gradient over all available conditional trajectory segments",
+  "joint_objective_reduction": "mean_over_condition_trajectory_objectives",
+  "official_train_model_objective_reused": true,
+  "official_implementation_unmodified": false,
+  "same_day_treatment_snapshots_merged": false,
+  "one_shared_parameter_model": true,
+  "growth_output_used_for_scoring": false,
+  "cell_count_interpreted_as_population_growth_truth": false,
+  "adapter_device_patch": "time tensor follows the state device"
+}

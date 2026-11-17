@@ -1,0 +1,93 @@
+{
+  "main_limits": [
+    [
+      -1.0812357314214287,
+      0.7678897591
+    ],
+    [
+      -1.2634450662180001,
+      1.1531382099179999
+    ]
+  ],
+  "supplement_limits": [
+    [
+      -2.5378439617156983,
+      1.6367595386505127
+    ],
+    [
+      -1.8818537425994872,
+      2.3724152278900146
+    ]
+  ],
+  "arrow_display_factor": 0.1688396645630982,
+  "arrow_factor_reused_unchanged": true,
+  "background_coordinates_reused_unchanged": true,
+  "grid": {
+    "xedges": [
+      -0.9335290766428572,
+      -0.7906575485665586,
+      -0.6477860204902599,
+      -0.5049144924139611,
+      -0.3620429643376625,
+      -0.21917143626136382,
+      -0.07629990818506505,
+      0.06657161989123361,
+      0.20944314796753227,
+      0.35231467604383093,
+      0.4951862041201296,
+      0.6380577321964285
+    ],
+    "yedges": [
+      -1.154436492857143,
+      -0.9611899765535714,
+      -0.76794346025,
+      -0.5746969439464287,
+      -0.3814504276428572,
+      -0.1882039113392857,
+      0.005042604964285546,
+      0.19828912126785703,
+      0.3915356375714285,
+      0.584782153875,
+      0.7780286701785715,
+      0.9712751864821428
+    ],
+    "source_line_start": 667,
+    "source_line_end": 677,
+    "grid_block_executed_from_original_source": true,
+    "min_count": 3
+  },
+  "trajectory_selection": {
+    "method": "start nearest coordinate-wise median, then farthest-point DC1/DC2 coverage",
+    "treatment_independent_selection": true,
+    "visible_start_candidates": 7,
+    "same_trajectory_ids_in_all_treatments": [
+      1,
+      2,
+      16,
+      19,
+      22,
+      25
+    ],
+    "trajectory_reintegrated": false
+  },
+  "treatment_order": [
+    "Control",
+    "Anti-PD1",
+    "Anti-4-1BB",
+    "Combination"
+  ],
+  "legacy_treatment_order": [
+    "Control",
+    "Anti-PD1",
+    "Anti-41BB",
+    "Anti-PD1+Anti-41BB"
+  ],
+  "panel_titles": {
+    "Control": "Control",
+    "Anti-PD1": "Anti-PD1",
+    "Anti-41BB": "Anti-4-1BB",
+    "Anti-PD1+Anti-41BB": "Combination"
+  },
+  "background_style": "original plot_pseudocell_time_velocity; viridis, size14, alpha0.54, original markers",
+  "mean_path": "original saved pseudocell mean path; independent of the replacement arrows"
+}

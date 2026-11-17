@@ -1,0 +1,10 @@
+{
+  "drift_initialization": "full_data_or_split_refit",
+  "drift_random_initialization": false,
+  "prefit_drift_supplied": false,
+  "q_in_source_mode": "fixed_notebook_empirical_distribution",
+  "reaction_trains_drift": true,
+  "seed": 20260818,
+  "source_drift_checkpoint": "./MultiNeD/outputs/notebook_drift_run/drift_model.pt",
+  "source_reaction_checkpoint": "./MultiNeD/outputs/reaction_coupled_run/reaction_coupled_model.pt"
+}

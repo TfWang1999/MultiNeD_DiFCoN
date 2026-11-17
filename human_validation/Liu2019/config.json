@@ -1,0 +1,25 @@
+{
+  "dataset": "Liu et al. 2019 metastatic melanoma anti-PD1",
+  "article_doi": "10.1038/s41591-019-0654-5",
+  "expression_source": "Official Supplementary Data 2 RNA-seq TPM matrix",
+  "clinical_source": "Official Supplementary Tables, Supplemental Table 1",
+  "sample_filter": "biopsyContext code 3 = Pre-PD1 only",
+  "expression_transform": "log2(TPM + 1)",
+  "gene_standardization": "within 104 Pre-PD1 tumors, gene-wise Z-score, ddof=0",
+  "ortholog_mapping_implementation": "human_validation/common/build_ortholog_mapping",
+  "program_scoring_implementation": "human_validation/common/calculate_scores",
+  "program_gene_source": "../../data/mouse/program_weights/Fig1e_program_top_genes.csv",
+  "genes_per_source_program": 50,
+  "ortholog_source": "reused GSE91061 HGNC HCOP human_mouse_hcop_fifteen_column.txt.gz",
+  "ortholog_identifier": "human_entrez_gene",
+  "ortholog_weight_rule": "split each mouse-gene weight equally across all expressed human orthologs, then renormalize covered weights within each source program",
+  "program_standardization": "within 104 Pre-PD1 tumors, Z-score, ddof=0",
+  "cd8score_alpha_source": "../../dynamics_analysis/outputs/robustness/dynamic_importance_by_delta.csv",
+  "cd8score_alpha_filter": {
+    "treatment": "Anti-PD1",
+    "delta_sd": 0.5,
+    "column": "alpha_mean"
+  },
+  "cox_ties": "efron",
+  "outcome_based_gene_or_weight_selection": false
+}

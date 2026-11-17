@@ -1,0 +1,7 @@
+treatment_clean,drug,day,dose_amount
+Anti-PD1,Anti-PD1,1.0,1.0
+Anti-PD1,Anti-PD1,4.0,1.0
+Anti-41BB,Anti-41BB,2.0,1.0
+Anti-PD1+Anti-41BB,Anti-PD1,1.0,1.0
+Anti-PD1+Anti-41BB,Anti-PD1,4.0,1.0
+Anti-PD1+Anti-41BB,Anti-41BB,2.0,1.0

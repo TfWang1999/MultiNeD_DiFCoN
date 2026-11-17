@@ -1,0 +1,707 @@
+{
+  "generator": "data_preparation/prepare_source_tables.py",
+  "inputs": {
+    "baseline": "DiFCoN/outputs/dose_weight_sweep/dose_weight_1p0_seed_2032",
+    "dose_sweep": "DiFCoN/outputs/dose_weight_sweep",
+    "objective_ablation": "DiFCoN/outputs/objective_ablation",
+    "observation_history": "DiFCoN/outputs/observation_history_ablation",
+    "openloop": "DiFCoN/outputs/openloop_comparison",
+    "benchmark": "DiFCoN/outputs/locked_test_benchmark",
+    "attribution": "DiFCoN/outputs/input_attribution"
+  },
+  "runtime": {
+    "python": "3.11.15",
+    "pandas": "2.3.3",
+    "numpy": "2.4.4"
+  },
+  "files": {
+    "baseline": "baseline_strategy_statistics.csv",
+    "dose_weight": "dose_weight_sensitivity.xlsx",
+    "objective": "objective_ablation.xlsx",
+    "observation": "observation_ablation.xlsx",
+    "openloop": "openloop_comparison.xlsx",
+    "locked": "locked_benchmark_analysis.xlsx",
+    "attribution": "policy_input_attribution.xlsx"
+  },
+  "tables": {
+    "baseline": {
+      "paired_tests": {
+        "rows": 42,
+        "columns": [
+          "metric",
+          "strategy_a",
+          "strategy_b",
+          "comparison",
+          "test",
+          "n_pairs",
+          "mean_a",
+          "mean_b",
+          "mean_difference_a_minus_b",
+          "statistic",
+          "p_value"
+        ],
+        "dtypes": {
+          "metric": "object",
+          "strategy_a": "object",
+          "strategy_b": "object",
+          "comparison": "object",
+          "test": "object",
+          "n_pairs": "int64",
+          "mean_a": "float64",
+          "mean_b": "float64",
+          "mean_difference_a_minus_b": "float64",
+          "statistic": "float64",
+          "p_value": "float64"
+        }
+      }
+    },
+    "dose_weight": {
+      "cohort_summary": {
+        "rows": 8,
+        "columns": [
+          "final_tumor_weight",
+          "tumor_auc_weight",
+          "functional_activity_weight",
+          "smoothness_weight",
+          "total_dose_weight",
+          "efficiency_weight",
+          "functional_retention",
+          "total_budget",
+          "daily_total_dose_cap",
+          "validation_final_C_rel_count",
+          "validation_final_C_rel_mean",
+          "validation_final_C_rel_std",
+          "validation_tumor_auc_rel_count",
+          "validation_tumor_auc_rel_mean",
+          "validation_tumor_auc_rel_std",
+          "validation_total_dose_count",
+          "validation_total_dose_mean",
+          "validation_total_dose_std",
+          "validation_late_activity_count",
+          "validation_late_activity_mean",
+          "validation_late_activity_std",
+          "validation_functional_activity_loss_count",
+          "validation_functional_activity_loss_mean",
+          "validation_functional_activity_loss_std",
+          "test_final_C_rel_count",
+          "test_final_C_rel_mean",
+          "test_final_C_rel_std",
+          "test_tumor_auc_rel_count",
+          "test_tumor_auc_rel_mean",
+          "test_tumor_auc_rel_std",
+          "test_total_dose_count",
+          "test_total_dose_mean",
+          "test_total_dose_std",
+          "test_late_activity_count",
+          "test_late_activity_mean",
+          "test_late_activity_std",
+          "test_functional_activity_loss_count",
+          "test_functional_activity_loss_mean",
+          "test_functional_activity_loss_std"
+        ],
+        "dtypes": {
+          "final_tumor_weight": "float64",
+          "tumor_auc_weight": "float64",
+          "functional_activity_weight": "float64",
+          "smoothness_weight": "float64",
+          "total_dose_weight": "float64",
+          "efficiency_weight": "float64",
+          "functional_retention": "float64",
+          "total_budget": "float64",
+          "daily_total_dose_cap": "float64",
+          "validation_final_C_rel_count": "int64",
+          "validation_final_C_rel_mean": "float64",
+          "validation_final_C_rel_std": "float64",
+          "validation_tumor_auc_rel_count": "int64",
+          "validation_tumor_auc_rel_mean": "float64",
+          "validation_tumor_auc_rel_std": "float64",
+          "validation_total_dose_count": "int64",
+          "validation_total_dose_mean": "float64",
+          "validation_total_dose_std": "float64",
+          "validation_late_activity_count": "int64",
+          "validation_late_activity_mean": "float64",
+          "validation_late_activity_std": "float64",
+          "validation_functional_activity_loss_count": "int64",
+          "validation_functional_activity_loss_mean": "float64",
+          "validation_functional_activity_loss_std": "float64",
+          "test_final_C_rel_count": "int64",
+          "test_final_C_rel_mean": "float64",
+          "test_final_C_rel_std": "float64",
+          "test_tumor_auc_rel_count": "int64",
+          "test_tumor_auc_rel_mean": "float64",
+          "test_tumor_auc_rel_std": "float64",
+          "test_total_dose_count": "int64",
+          "test_total_dose_mean": "float64",
+          "test_total_dose_std": "float64",
+          "test_late_activity_count": "int64",
+          "test_late_activity_mean": "float64",
+          "test_late_activity_std": "float64",
+          "test_functional_activity_loss_count": "int64",
+          "test_functional_activity_loss_mean": "float64",
+          "test_functional_activity_loss_std": "float64"
+        }
+      },
+      "fixed_control_comparison": {
+        "rows": 192,
+        "columns": [
+          "patient_id",
+          "final_C_rel",
+          "tumor_auc_rel",
+          "total_dose",
+          "group"
+        ],
+        "dtypes": {
+          "patient_id": "object",
+          "final_C_rel": "float64",
+          "tumor_auc_rel": "float64",
+          "total_dose": "float64",
+          "group": "object"
+        }
+      },
+      "full_policy_patient_by_seed": {
+        "rows": 96,
+        "columns": [
+          "patient_id",
+          "cohort",
+          "strategy",
+          "budget_id",
+          "budget_value",
+          "loss",
+          "final_C_rel",
+          "tumor_regression",
+          "tumor_auc_rel",
+          "final_N_rel",
+          "mean_activity",
+          "mean_A_CD8",
+          "total_PD1_dose",
+          "total_B41BB_dose",
+          "total_dose",
+          "first_PD1_day",
+          "first_B41BB_day",
+          "order_class",
+          "final_score_precursor",
+          "final_score_activation",
+          "final_score_eff_early",
+          "final_score_eff_cytox",
+          "final_score_dysfunction",
+          "loss_total_loss",
+          "loss_final_tumor_loss",
+          "loss_tumor_auc_loss",
+          "loss_functional_activity_loss",
+          "loss_late_activity",
+          "loss_target_activity",
+          "loss_baseline_activity",
+          "loss_smoothness_loss",
+          "loss_total_dose_loss",
+          "loss_normalized_total_dose",
+          "loss_efficiency_loss",
+          "loss_drug_efficiency",
+          "loss_tumor_benefit",
+          "loss_total_dose",
+          "combine_response_class",
+          "model_seed"
+        ],
+        "dtypes": {
+          "patient_id": "object",
+          "cohort": "object",
+          "strategy": "object",
+          "budget_id": "object",
+          "budget_value": "float64",
+          "loss": "float64",
+          "final_C_rel": "float64",
+          "tumor_regression": "float64",
+          "tumor_auc_rel": "float64",
+          "final_N_rel": "float64",
+          "mean_activity": "float64",
+          "mean_A_CD8": "float64",
+          "total_PD1_dose": "float64",
+          "total_B41BB_dose": "float64",
+          "total_dose": "float64",
+          "first_PD1_day": "float64",
+          "first_B41BB_day": "float64",
+          "order_class": "object",
+          "final_score_precursor": "float64",
+          "final_score_activation": "float64",
+          "final_score_eff_early": "float64",
+          "final_score_eff_cytox": "float64",
+          "final_score_dysfunction": "float64",
+          "loss_total_loss": "float64",
+          "loss_final_tumor_loss": "float64",
+          "loss_tumor_auc_loss": "float64",
+          "loss_functional_activity_loss": "float64",
+          "loss_late_activity": "float64",
+          "loss_target_activity": "float64",
+          "loss_baseline_activity": "float64",
+          "loss_smoothness_loss": "float64",
+          "loss_total_dose_loss": "float64",
+          "loss_normalized_total_dose": "float64",
+          "loss_efficiency_loss": "float64",
+          "loss_drug_efficiency": "float64",
+          "loss_tumor_benefit": "float64",
+          "loss_total_dose": "float64",
+          "combine_response_class": "object",
+          "model_seed": "int64"
+        }
+      }
+    },
+    "objective": {
+      "seed2031_patients": {
+        "rows": 160,
+        "columns": [
+          "patient_id",
+          "C_relative",
+          "CTB",
+          "L_F",
+          "D_total",
+          "variant",
+          "run_name"
+        ],
+        "dtypes": {
+          "patient_id": "object",
+          "C_relative": "float64",
+          "CTB": "float64",
+          "L_F": "float64",
+          "D_total": "float64",
+          "variant": "object",
+          "run_name": "object"
+        }
+      },
+      "seed2031_means_ratios": {
+        "rows": 5,
+        "columns": [
+          "variant",
+          "C_relative_mean",
+          "CTB_mean",
+          "L_F_mean",
+          "D_total_mean",
+          "C_relative_relative",
+          "CTB_relative",
+          "L_F_relative",
+          "D_total_relative"
+        ],
+        "dtypes": {
+          "variant": "object",
+          "C_relative_mean": "float64",
+          "CTB_mean": "float64",
+          "L_F_mean": "float64",
+          "D_total_mean": "float64",
+          "C_relative_relative": "float64",
+          "CTB_relative": "float64",
+          "L_F_relative": "float64",
+          "D_total_relative": "float64"
+        }
+      }
+    },
+    "observation": {
+      "patient_seed_means": {
+        "rows": 96,
+        "columns": [
+          "patient_id",
+          "setting",
+          "final_C_rel",
+          "tumor_auc_rel",
+          "total_dose"
+        ],
+        "dtypes": {
+          "patient_id": "object",
+          "setting": "object",
+          "final_C_rel": "float64",
+          "tumor_auc_rel": "float64",
+          "total_dose": "float64"
+        }
+      },
+      "paired_tests": {
+        "rows": 9,
+        "columns": [
+          "metric",
+          "setting_a",
+          "setting_b",
+          "n",
+          "statistic",
+          "p_value",
+          "mean_difference",
+          "p_holm"
+        ],
+        "dtypes": {
+          "metric": "object",
+          "setting_a": "object",
+          "setting_b": "object",
+          "n": "int64",
+          "statistic": "float64",
+          "p_value": "float64",
+          "mean_difference": "float64",
+          "p_holm": "float64"
+        }
+      },
+      "full_practical_tests": {
+        "rows": 4,
+        "columns": [
+          "metric",
+          "test",
+          "mean_difference",
+          "statistic",
+          "p_value",
+          "n"
+        ],
+        "dtypes": {
+          "metric": "object",
+          "test": "object",
+          "mean_difference": "float64",
+          "statistic": "float64",
+          "p_value": "float64",
+          "n": "int64"
+        }
+      }
+    },
+    "openloop": {
+      "patient_seed_means": {
+        "rows": 96,
+        "columns": [
+          "patient_id",
+          "strategy",
+          "final_C_rel",
+          "tumor_auc_rel",
+          "total_dose",
+          "model_seed"
+        ],
+        "dtypes": {
+          "patient_id": "object",
+          "strategy": "object",
+          "final_C_rel": "float64",
+          "tumor_auc_rel": "float64",
+          "total_dose": "float64",
+          "model_seed": "object"
+        }
+      },
+      "paired_tests": {
+        "rows": 9,
+        "columns": [
+          "metric",
+          "strategy_a",
+          "strategy_b",
+          "comparison",
+          "test",
+          "pairing_unit",
+          "n_pairs",
+          "mean_a",
+          "mean_b",
+          "mean_difference_a_minus_b",
+          "statistic",
+          "p_value_raw",
+          "p_adjustment",
+          "p_value_display",
+          "significance"
+        ],
+        "dtypes": {
+          "metric": "object",
+          "strategy_a": "object",
+          "strategy_b": "object",
+          "comparison": "object",
+          "test": "object",
+          "pairing_unit": "object",
+          "n_pairs": "int64",
+          "mean_a": "float64",
+          "mean_b": "float64",
+          "mean_difference_a_minus_b": "float64",
+          "statistic": "float64",
+          "p_value_raw": "float64",
+          "p_adjustment": "object",
+          "p_value_display": "float64",
+          "significance": "object"
+        }
+      },
+      "feedback_patient_differences": {
+        "rows": 32,
+        "columns": [
+          "patient_id",
+          "dose_open_minus_closed",
+          "tumour_open_minus_closed"
+        ],
+        "dtypes": {
+          "patient_id": "object",
+          "dose_open_minus_closed": "float64",
+          "tumour_open_minus_closed": "float64"
+        }
+      },
+      "mean_tumour_trajectories": {
+        "rows": 68,
+        "columns": [
+          "strategy",
+          "day",
+          "mean",
+          "sem"
+        ],
+        "dtypes": {
+          "strategy": "object",
+          "day": "float64",
+          "mean": "float64",
+          "sem": "float64"
+        }
+      }
+    },
+    "locked": {
+      "patient_metrics": {
+        "rows": 320,
+        "columns": [
+          "patient_id",
+          "strategy",
+          "loss",
+          "final_C_rel",
+          "tumor_auc_rel",
+          "total_dose"
+        ],
+        "dtypes": {
+          "patient_id": "object",
+          "strategy": "object",
+          "loss": "float64",
+          "final_C_rel": "float64",
+          "tumor_auc_rel": "float64",
+          "total_dose": "float64"
+        }
+      },
+      "strategy_summary": {
+        "rows": 10,
+        "columns": [
+          "strategy",
+          "patient_count",
+          "mean_loss",
+          "sd_loss",
+          "ci95_low_loss",
+          "ci95_high_loss",
+          "mean_final_C_rel",
+          "sd_final_C_rel",
+          "ci95_low_final_C_rel",
+          "ci95_high_final_C_rel",
+          "mean_tumor_auc_rel",
+          "sd_tumor_auc_rel",
+          "ci95_low_tumor_auc_rel",
+          "ci95_high_tumor_auc_rel",
+          "mean_total_dose",
+          "sd_total_dose",
+          "ci95_low_total_dose",
+          "ci95_high_total_dose"
+        ],
+        "dtypes": {
+          "strategy": "object",
+          "patient_count": "int64",
+          "mean_loss": "float64",
+          "sd_loss": "float64",
+          "ci95_low_loss": "float64",
+          "ci95_high_loss": "float64",
+          "mean_final_C_rel": "float64",
+          "sd_final_C_rel": "float64",
+          "ci95_low_final_C_rel": "float64",
+          "ci95_high_final_C_rel": "float64",
+          "mean_tumor_auc_rel": "float64",
+          "sd_tumor_auc_rel": "float64",
+          "ci95_low_tumor_auc_rel": "float64",
+          "ci95_high_tumor_auc_rel": "float64",
+          "mean_total_dose": "float64",
+          "sd_total_dose": "float64",
+          "ci95_low_total_dose": "float64",
+          "ci95_high_total_dose": "float64"
+        }
+      },
+      "paired_comparisons": {
+        "rows": 36,
+        "columns": [
+          "metric",
+          "reference",
+          "comparator",
+          "n_patients",
+          "mean_paired_difference",
+          "sd_paired_difference",
+          "paired_t",
+          "pvalue",
+          "pvalue_holm",
+          "mean_comparator_minus_reference",
+          "ci95_low",
+          "ci95_high",
+          "holm_significant_0_05"
+        ],
+        "dtypes": {
+          "metric": "object",
+          "reference": "object",
+          "comparator": "object",
+          "n_patients": "int64",
+          "mean_paired_difference": "float64",
+          "sd_paired_difference": "float64",
+          "paired_t": "float64",
+          "pvalue": "float64",
+          "pvalue_holm": "float64",
+          "mean_comparator_minus_reference": "float64",
+          "ci95_low": "float64",
+          "ci95_high": "float64",
+          "holm_significant_0_05": "bool"
+        }
+      },
+      "seed_metrics": {
+        "rows": 30,
+        "columns": [
+          "model_seed",
+          "strategy",
+          "mean_loss",
+          "mean_final_C_rel",
+          "mean_tumor_auc_rel",
+          "mean_total_dose",
+          "patient_count"
+        ],
+        "dtypes": {
+          "model_seed": "int64",
+          "strategy": "object",
+          "mean_loss": "float64",
+          "mean_final_C_rel": "float64",
+          "mean_tumor_auc_rel": "float64",
+          "mean_total_dose": "float64",
+          "patient_count": "int64"
+        }
+      },
+      "compute_summary": {
+        "rows": 10,
+        "columns": [
+          "strategy",
+          "method_group",
+          "wall_seconds_per_patient",
+          "forward_evaluations_per_patient",
+          "accounting_unit"
+        ],
+        "dtypes": {
+          "strategy": "object",
+          "method_group": "object",
+          "wall_seconds_per_patient": "float64",
+          "forward_evaluations_per_patient": "float64",
+          "accounting_unit": "object"
+        }
+      },
+      "patient_pair_differences": {
+        "rows": 256,
+        "columns": [
+          "patient_id",
+          "comparator",
+          "metric",
+          "difference"
+        ],
+        "dtypes": {
+          "patient_id": "object",
+          "comparator": "object",
+          "metric": "object",
+          "difference": "float64"
+        }
+      },
+      "patient_tradeoff": {
+        "rows": 128,
+        "columns": [
+          "patient_id",
+          "comparator",
+          "delta_C",
+          "delta_D"
+        ],
+        "dtypes": {
+          "patient_id": "object",
+          "comparator": "object",
+          "delta_C": "float64",
+          "delta_D": "float64"
+        }
+      },
+      "daily_action_means": {
+        "rows": 80,
+        "columns": [
+          "strategy",
+          "day",
+          "action_PD1",
+          "action_B41BB"
+        ],
+        "dtypes": {
+          "strategy": "object",
+          "day": "float64",
+          "action_PD1": "float64",
+          "action_B41BB": "float64"
+        }
+      }
+    },
+    "attribution": {
+      "lag_attribution": {
+        "rows": 10,
+        "columns": [
+          "output",
+          "lag_from_current",
+          "scaled_absolute_gradient_sum",
+          "absolute_integrated_gradient_sum",
+          "history_role",
+          "scaled_gradient_fraction",
+          "integrated_gradient_fraction"
+        ],
+        "dtypes": {
+          "output": "object",
+          "lag_from_current": "int64",
+          "scaled_absolute_gradient_sum": "float64",
+          "absolute_integrated_gradient_sum": "float64",
+          "history_role": "object",
+          "scaled_gradient_fraction": "float64",
+          "integrated_gradient_fraction": "float64"
+        }
+      },
+      "intervention_patient_means": {
+        "rows": 64,
+        "columns": [
+          "history_intervention",
+          "patient_id",
+          "delta_loss",
+          "delta_final_C_rel",
+          "delta_tumor_auc_rel",
+          "delta_total_dose"
+        ],
+        "dtypes": {
+          "history_intervention": "object",
+          "patient_id": "object",
+          "delta_loss": "float64",
+          "delta_final_C_rel": "float64",
+          "delta_tumor_auc_rel": "float64",
+          "delta_total_dose": "float64"
+        }
+      },
+      "intervention_statistics": {
+        "rows": 2,
+        "columns": [
+          "history_intervention",
+          "n_patients",
+          "delta_loss_mean",
+          "delta_loss_median",
+          "bootstrap_mean_ci95_low",
+          "bootstrap_mean_ci95_high",
+          "wilcoxon_two_sided_p",
+          "fraction_delta_loss_positive",
+          "replication_unit"
+        ],
+        "dtypes": {
+          "history_intervention": "object",
+          "n_patients": "int64",
+          "delta_loss_mean": "float64",
+          "delta_loss_median": "float64",
+          "bootstrap_mean_ci95_low": "float64",
+          "bootstrap_mean_ci95_high": "float64",
+          "wilcoxon_two_sided_p": "float64",
+          "fraction_delta_loss_positive": "float64",
+          "replication_unit": "object"
+        }
+      },
+      "feature_attribution": {
+        "rows": 64,
+        "columns": [
+          "output",
+          "history_role",
+          "feature",
+          "absolute_integrated_gradient_mean",
+          "scaled_absolute_gradient_mean"
+        ],
+        "dtypes": {
+          "output": "object",
+          "history_role": "object",
+          "feature": "object",
+          "absolute_integrated_gradient_mean": "float64",
+          "scaled_absolute_gradient_mean": "float64"
+        }
+      }
+    }
+  }
+}

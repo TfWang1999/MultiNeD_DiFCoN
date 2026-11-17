@@ -1,0 +1,80 @@
+{
+  "bounds": {
+    "f_b_coeff": [
+      0.0,
+      15.0
+    ],
+    "g_b_coeff": [
+      0.0,
+      15.0
+    ],
+    "g_pd1_coeff": [
+      0.0,
+      15.0
+    ],
+    "killing": [
+      0.01,
+      0.3
+    ],
+    "lambda_act": [
+      0.0,
+      15.0
+    ],
+    "source_rate": [
+      0.0,
+      0.8
+    ],
+    "stim_k": [
+      30.0,
+      500.0
+    ],
+    "tumor_k": [
+      2000.0,
+      6000.0
+    ],
+    "tumor_r": [
+      0.005,
+      2.0
+    ]
+  },
+  "fixed": [
+    "death_rate",
+    "K_P",
+    "K_B",
+    "killing_weights"
+  ],
+  "killing_weights": [
+    0.20000000298023224,
+    0.6000000238418579,
+    0.800000011920929,
+    1.0,
+    0.4000000059604645
+  ],
+  "reaction_effect_values": {
+    "K_B": 0.4999999701976776,
+    "K_P": 0.4999999701976776,
+    "f_b_coeff": 3.0,
+    "g_b_coeff": 3.0,
+    "g_pd1_coeff": 1.5
+  },
+  "trainable": [
+    "tumor_r",
+    "tumor_k",
+    "killing",
+    "source_rate",
+    "lambda_act",
+    "stim_k",
+    "f_b_coeff",
+    "g_b_coeff",
+    "g_pd1_coeff"
+  ],
+  "values": {
+    "death_rate": 0.17999999225139618,
+    "killing": 0.10000000149011612,
+    "lambda_act": 0.30000001192092896,
+    "source_rate": 0.19999998807907104,
+    "stim_k": 150.00001525878906,
+    "tumor_k": 3999.99853515625,
+    "tumor_r": 0.3100000023841858
+  }
+}

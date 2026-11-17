@@ -1,0 +1,166 @@
+{
+  "base_validation_config": "MultiNeD/configs/validation/volume_loto_base.json",
+  "base_validation_resolved": {
+    "config_source": "./MultiNeD/configs/validation/volume_loto_base.json",
+    "description": "Reaction-only stage-1 leave-one-volume-timepoint-out CV with balanced Sinkhorn distribution loss.",
+    "drift": {
+      "device": "cuda:0",
+      "drift_l2_weight": 1e-05,
+      "grad_clip": 5.0,
+      "loss_mode": "local_rollout",
+      "lr": 0.001,
+      "lr_factor": 0.5,
+      "lr_patience": 20,
+      "min_lr": 5e-07,
+      "n_epochs": 800,
+      "n_max": 256,
+      "n_steps_per_day": 10,
+      "print_every": 50,
+      "rollout_loss_weight": 0.5,
+      "rollout_n_max": 256,
+      "sinkhorn_epsilon": 0.08,
+      "sinkhorn_iters": 60,
+      "time_scale": 15.0,
+      "weight_decay": 1e-05
+    },
+    "evaluation": {
+      "device": "cuda:0",
+      "energy_max_points": 512,
+      "n_particles": 512,
+      "robust_quantiles": [
+        0.01,
+        0.99
+      ],
+      "sinkhorn_epsilon": 0.08,
+      "sinkhorn_iters": 60,
+      "z_scale": "zstd"
+    },
+    "experiments": {
+      "m1": {
+        "volume_timepoint_cv": {
+          "days": [
+            4,
+            6,
+            10,
+            14,
+            17
+          ],
+          "seeds": [
+            20260816,
+            20260817,
+            20260818
+          ],
+          "treatments": [
+            "Control",
+            "Anti-PD1",
+            "Anti-41BB",
+            "Anti-PD1+Anti-41BB"
+          ]
+        }
+      }
+    },
+    "inputs": {
+      "cell_score_csv": "data/mouse/cell_level_z/B16_OT1_tumor_joint_fig1e_cell_z.csv",
+      "drift_checkpoint": "MultiNeD/outputs/notebook_drift_run/drift_model.pt",
+      "group_info_csv": "data/mouse/group_distributions/B16_OT1_tumor_joint_zstd_group_info.csv",
+      "group_pkl": "data/mouse/group_distributions/B16_OT1_tumor_joint_zstd_group_distributions.pkl",
+      "q_in_npy": "MultiNeD/outputs/reaction_coupled_run/q_in_precursor_empirical.npy",
+      "reaction_checkpoint": "MultiNeD/outputs/reaction_coupled_run/reaction_coupled_model.pt",
+      "reaction_parameter_settings": "MultiNeD/outputs/reaction_coupled_run/reaction_parameter_settings.json",
+      "transition_csv": "data/mouse/manifests/B16_OT1_tumor_joint_transition_manifest_temporal.csv",
+      "volume_csv": "data/mouse/source_metadata/paper_tumor_volume_long.csv"
+    },
+    "output": {
+      "root": "MultiNeD/outputs/volume_loto"
+    },
+    "profile": "full",
+    "reaction": {
+      "device": "cuda:0",
+      "drift_lr": 0.001,
+      "dt": 0.1,
+      "loss_mode": "local_rollout",
+      "lr": 0.01,
+      "lr_scheduler_factor": 0.5,
+      "lr_scheduler_patience": 30,
+      "min_lr": 1e-07,
+      "n_epochs": 600,
+      "n_particles": 512,
+      "print_every": 20,
+      "sinkhorn_epsilon": 0.08,
+      "sinkhorn_iters": 60,
+      "stim_k": 150.0,
+      "train_drift": true,
+      "volume_loss_weight": 2.0,
+      "weight_decay": 1e-05,
+      "z_loss_weight": 1.0
+    },
+    "schema_version": 1,
+    "seed": 20260816
+  },
+  "config_source": "./MultiNeD/configs/benchmarking/training_loss_ablation.json",
+  "description": "Full-B16 in-sample loss, rollout and pretraining ablations without held-out groups, conditions or time points.",
+  "device": "cuda:0",
+  "drift": {
+    "device": "auto",
+    "drift_l2_weight": 1e-05,
+    "grad_clip": 5.0,
+    "loss_mode": "local_rollout",
+    "lr": 0.001,
+    "lr_factor": 0.5,
+    "lr_patience": 20,
+    "min_lr": 5e-07,
+    "n_epochs": 800,
+    "n_max": 256,
+    "n_steps_per_day": 10,
+    "print_every": 50,
+    "rollout_loss_weight": 0.5,
+    "rollout_n_max": 256,
+    "sinkhorn_epsilon": 0.08,
+    "sinkhorn_iters": 60,
+    "time_scale": 15.0,
+    "weight_decay": 1e-05
+  },
+  "evaluation": {
+    "energy_max_points": 512,
+    "n_particles": 512
+  },
+  "implementation_revision": "paper_model",
+  "notebook_reference": {
+    "drift_initialization": "load outputs/notebook_drift_run/drift_model.pt",
+    "path": "MultiNeD/notebooks/02_calibrate_MultiNeD.ipynb",
+    "policy": "Only the named ablation component may differ from this reference.",
+    "q_in": "load outputs/reaction_coupled_run/q_in_precursor_empirical.npy",
+    "q_in_random_state_used_to_build_saved_array": 2026,
+    "reaction_train_drift": true
+  },
+  "output_root": "MultiNeD/outputs/training_loss_ablation",
+  "profile": "full",
+  "reaction": {
+    "device": "auto",
+    "drift_lr": 0.001,
+    "dt": 0.1,
+    "loss_mode": "local_rollout",
+    "lr": 0.01,
+    "lr_scheduler_factor": 0.5,
+    "lr_scheduler_patience": 30,
+    "min_lr": 1e-07,
+    "n_epochs": 600,
+    "n_particles": 512,
+    "print_every": 20,
+    "sinkhorn_epsilon": 0.08,
+    "sinkhorn_iters": 60,
+    "stim_k": 150.0,
+    "train_drift": true,
+    "volume_loss_weight": 2.0,
+    "weight_decay": 1e-05,
+    "z_loss_weight": 1.0
+  },
+  "schema_version": 1,
+  "seeds": [
+    20260817
+  ],
+  "variants": [
+    "balanced_ot_rollout_only_pretrained",
+    "nearest_neighbor_mse_local_rollout_pretrained"
+  ]
+}

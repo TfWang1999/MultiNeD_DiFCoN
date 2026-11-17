@@ -1,0 +1,104 @@
+strategy,method_group,patient_count,wall_seconds,forward_evaluations,gradient_evaluations,marginal_seconds_per_patient,patient_id,method,horizon_steps,population,generations,checkpoint_load_seconds,offline_training_in_current_run,environment_steps,sac_training_episodes,model_seed
+Anti-PD1,existing_controls,32.0,9.757231714669615,32,0,0.30491351889213547,,,,,,,,,,2033
+Anti-4-1BB,existing_controls,32.0,9.414005596190691,32,0,0.2941876911208965,,,,,,,,,,2033
+Combine,existing_controls,32.0,9.340352093800902,32,0,0.29188601761416066,,,,,,,,,,2033
+No treatment,existing_controls,32.0,9.377276180777699,32,0,0.29303988814353943,,,,,,,,,,2033
+Validation-derived open loop,existing_controls,32.0,9.279937023762614,32,0,0.2899980460497318,,,,,,,,,,2033
+Amortized 1D-CNN,existing_controls,32.0,9.915255459025502,32,0,0.30985174591478426,,,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,148.78890110878274,300,300,,test_001,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,148.0884114112705,300,300,,test_002,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,147.70186531590298,300,300,,test_003,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,147.78576605999842,300,300,,test_004,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,147.59296043869108,300,300,,test_005,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,134.17086568521336,300,300,,test_006,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,112.02930207597092,300,300,,test_007,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,87.8887769561261,300,300,,test_008,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,84.89695943333209,300,300,,test_009,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,84.13020548503846,300,300,,test_010,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,82.94707301165909,300,300,,test_011,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,83.09849246731028,300,300,,test_012,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,82.90079014096409,300,300,,test_013,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,82.96996057778597,300,300,,test_014,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,83.12015917617828,300,300,,test_015,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,83.1495580971241,300,300,,test_016,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,83.14815084636211,300,300,,test_017,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,83.04851657804102,300,300,,test_018,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,84.81584994774312,300,300,,test_019,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,84.34438900323585,300,300,,test_020,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,82.50231253122911,300,300,,test_021,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,82.2854714198038,300,300,,test_022,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,81.8070372948423,300,300,,test_023,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,81.68329996569082,300,300,,test_024,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,81.70461513102055,300,300,,test_025,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,81.61022916715592,300,300,,test_026,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,81.61826546117663,300,300,,test_027,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,82.62209119275212,300,300,,test_028,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,83.00320831919089,300,300,,test_029,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,83.07076682895422,300,300,,test_030,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,83.15725300600752,300,300,,test_031,gradient_open_loop,,,,,,,,2033
+Per-patient gradient open loop,gradient_open_loop,,84.63806319981813,300,300,,test_032,gradient_open_loop,,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,204.35153886210173,960,960,,test_001,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,204.1479529091157,960,960,,test_002,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,204.23381022922695,960,960,,test_003,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,203.84065662976354,960,960,,test_004,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,203.646970116999,960,960,,test_005,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,203.81943617854267,960,960,,test_006,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,200.83958195196465,960,960,,test_007,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,203.27206471888348,960,960,,test_008,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,203.49714210629463,960,960,,test_009,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,198.87021151231602,960,960,,test_010,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,202.03895348217338,960,960,,test_011,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,203.22738878242671,960,960,,test_012,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,202.62636981206015,960,960,,test_013,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,203.75803279224783,960,960,,test_014,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,201.71539241680875,960,960,,test_015,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,203.82202729396522,960,960,,test_016,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,204.06419104989618,960,960,,test_017,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,200.55285168578848,960,960,,test_018,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,199.66721586091444,960,960,,test_019,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,203.1068920888938,960,960,,test_020,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,199.01637813914567,960,960,,test_021,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,198.7559732790105,960,960,,test_022,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,199.00223997002468,960,960,,test_023,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,193.89834864111617,960,960,,test_024,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,203.83316141320392,960,960,,test_025,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,203.83936106599867,960,960,,test_026,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,203.89098838856444,960,960,,test_027,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,203.73534378036857,960,960,,test_028,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,203.4765787771903,960,960,,test_029,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,199.78942164499313,960,960,,test_030,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,201.5540913050063,960,960,,test_031,rolling_horizon_mpc,5.0,,,,,,,2033
+Rolling-horizon MPC,rolling_horizon_mpc,,201.08787582302466,960,960,,test_032,rolling_horizon_mpc,5.0,,,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.622497046832,1920,0,,test_001,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.42573869228363,1920,0,,test_002,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,223.1838589310646,1920,0,,test_003,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.33220285968855,1920,0,,test_004,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.14724347088486,1920,0,,test_005,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.16636040387675,1920,0,,test_006,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.02495306171477,1920,0,,test_007,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.3983998792246,1920,0,,test_008,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.68461757106707,1920,0,,test_009,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.74919185601175,1920,0,,test_010,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.3893642858602,1920,0,,test_011,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.4775639688596,1920,0,,test_012,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.12042145989835,1920,0,,test_013,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.1781056271866,1920,0,,test_014,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.01830026414245,1920,0,,test_015,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,223.1651580678299,1920,0,,test_016,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.90652348473668,1920,0,,test_017,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.6183037678711,1920,0,,test_018,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.47126883687451,1920,0,,test_019,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.94955045729876,1920,0,,test_020,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.74289013817906,1920,0,,test_021,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.50513534992933,1920,0,,test_022,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.52927549974993,1920,0,,test_023,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.8415010329336,1920,0,,test_024,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.89561709295958,1920,0,,test_025,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,223.22551824711263,1920,0,,test_026,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.96431068517268,1920,0,,test_027,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.75514425011352,1920,0,,test_028,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,222.99283618619666,1920,0,,test_029,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,223.24612762406468,1920,0,,test_030,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,223.17587684700266,1920,0,,test_031,diagonal_cmaes,,24.0,80.0,,,,,2033
+Diagonal CMA-ES,diagonal_cmaes,,223.4574899673462,1920,0,,test_032,diagonal_cmaes,,24.0,80.0,,,,,2033
+SAC,sac,32.0,3.994366272818297,32,0,0.1248239566484699,,,,,,0.002558200154453516,False,0.0,3000.0,2033

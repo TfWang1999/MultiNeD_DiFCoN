@@ -1,0 +1,229 @@
+{
+  "training": {
+    "n_epochs": 600,
+    "n_particles": 512,
+    "n_inflow_particles": 1,
+    "dt": 0.1,
+    "lr": 0.01,
+    "drift_lr": 0.001,
+    "weight_decay": 1e-05,
+    "loss_mode": "local_rollout",
+    "z_loss_weight": 1,
+    "volume_loss_weight": 2,
+    "train_drift": true,
+    "sinkhorn_epsilon": 0.08,
+    "sinkhorn_iters": 60,
+    "reaction_effect": {
+      "f_b_coeff": 1.0,
+      "g_b_coeff": 1.0,
+      "g_pd1_coeff": 1.0,
+      "pd1_k": 1.0,
+      "b41bb_k": 1.0,
+      "eps": 1e-08,
+      "learnable": true
+    },
+    "stim_k": 150.00001525878906,
+    "parameter_bounds": {
+      "tumor_r": [
+        0.005,
+        2.0
+      ],
+      "tumor_k": [
+        2000.0,
+        6000.0
+      ],
+      "killing": [
+        0.01,
+        0.3
+      ],
+      "source_rate": [
+        0.0,
+        0.8
+      ],
+      "lambda_act": [
+        0.0,
+        15.0
+      ],
+      "stim_k": [
+        30.0,
+        500.0
+      ],
+      "f_b_coeff": [
+        0.0,
+        15.0
+      ],
+      "g_b_coeff": [
+        0.0,
+        15.0
+      ],
+      "g_pd1_coeff": [
+        0.0,
+        15.0
+      ]
+    },
+    "z_transform_params": {
+      "P_precursor_zstd": {
+        "dim": 0,
+        "lo": -1.6948299050331115,
+        "hi": 2.4954656839370664
+      },
+      "Activation_zstd": {
+        "dim": 1,
+        "lo": -2.0159467220306397,
+        "hi": 2.1864580154418936
+      },
+      "Eff_Early_zstd": {
+        "dim": 2,
+        "lo": -1.5216174840927124,
+        "hi": 2.8651981115341174
+      },
+      "Eff_Cytox_zstd": {
+        "dim": 3,
+        "lo": -1.5054649472236634,
+        "hi": 2.889764976501463
+      },
+      "Dysf_zstd": {
+        "dim": 4,
+        "lo": -1.821829581260681,
+        "hi": 2.605154490470886
+      }
+    },
+    "lr_scheduler_factor": 0.5,
+    "lr_scheduler_patience": 30,
+    "min_lr": 1e-07,
+    "device": "cuda:0",
+    "print_every": 20
+  },
+  "pk": {
+    "enabled": true,
+    "delta_pd1": 0.23,
+    "delta_b41bb": 0.1,
+    "pd1_dose_days": [
+      1.0,
+      4.0
+    ],
+    "b41bb_dose_days": [
+      2.0
+    ],
+    "pd1_dose_amount": 1.0,
+    "b41bb_dose_amount": 1.0,
+    "normalize_to_unit_peak": true
+  },
+  "qin": {
+    "strategy": "earliest_control_top_precursor",
+    "anchor_group": "day1__Control",
+    "anchor_day": 1.0,
+    "precursor_col": "P_precursor_zstd",
+    "top_quantile": 0.7,
+    "n_max": 2048,
+    "random_state": 2026,
+    "cutoff": -0.0992603451013565,
+    "n_q_in": 479,
+    "z_cols": [
+      "P_precursor_zstd",
+      "Activation_zstd",
+      "Eff_Early_zstd",
+      "Eff_Cytox_zstd",
+      "Dysf_zstd"
+    ]
+  },
+  "parameters": {
+    "tumor_r": {
+      "mode": "optimize",
+      "bounds": [
+        0.005,
+        2.0
+      ],
+      "init": 0.31
+    },
+    "tumor_k": {
+      "mode": "optimize",
+      "bounds": [
+        2000.0,
+        6000.0
+      ],
+      "init": 4000.0
+    },
+    "killing": {
+      "mode": "optimize",
+      "bounds": [
+        0.01,
+        0.3
+      ],
+      "init": 0.1
+    },
+    "source_rate": {
+      "mode": "optimize",
+      "bounds": [
+        0.0,
+        0.8
+      ],
+      "init": 0.2
+    },
+    "lambda_act": {
+      "mode": "optimize",
+      "bounds": [
+        0.0,
+        15.0
+      ],
+      "init": 0.3
+    },
+    "death_rate": {
+      "mode": "fixed",
+      "bounds": [
+        0.005,
+        1.0
+      ],
+      "value": 0.18
+    },
+    "stim_k": {
+      "mode": "optimize",
+      "bounds": [
+        30.0,
+        500.0
+      ],
+      "init": 150.0
+    },
+    "f_b_coeff": {
+      "mode": "optimize",
+      "bounds": [
+        0.0,
+        15.0
+      ],
+      "init": 3.0
+    },
+    "g_b_coeff": {
+      "mode": "optimize",
+      "bounds": [
+        0.0,
+        15.0
+      ],
+      "init": 3.0
+    },
+    "g_pd1_coeff": {
+      "mode": "optimize",
+      "bounds": [
+        0.0,
+        15.0
+      ],
+      "init": 1.5
+    },
+    "K_P": {
+      "mode": "fixed",
+      "bounds": [
+        0.1,
+        1.0
+      ],
+      "value": 0.5
+    },
+    "K_B": {
+      "mode": "fixed",
+      "bounds": [
+        0.1,
+        1.0
+      ],
+      "value": 0.5
+    }
+  },
+  "seed": 2026
+}

@@ -1,0 +1,321 @@
+{
+  "base_validation_config": "MultiNeD/configs/validation/volume_loto_base.json",
+  "base_validation_resolved": {
+    "config_source": "./MultiNeD/configs/validation/volume_loto_base.json",
+    "description": "Reaction-only stage-1 leave-one-volume-timepoint-out CV with balanced Sinkhorn distribution loss.",
+    "drift": {
+      "device": "cuda:0",
+      "n_epochs": 200,
+      "n_max": 256,
+      "n_steps_per_day": 10,
+      "print_every": 20,
+      "sinkhorn_iters": 60
+    },
+    "evaluation": {
+      "n_particles": 512,
+      "robust_quantiles": [
+        0.01,
+        0.99
+      ],
+      "sinkhorn_epsilon": 0.08,
+      "sinkhorn_iters": 60,
+      "z_scale": "robust01"
+    },
+    "experiments": {
+      "m1": {
+        "volume_timepoint_cv": {
+          "days": [
+            4,
+            6,
+            10,
+            14,
+            17
+          ],
+          "seeds": [
+            20260816,
+            20260817,
+            20260818
+          ],
+          "treatments": [
+            "Control",
+            "Anti-PD1",
+            "Anti-41BB",
+            "Anti-PD1+Anti-41BB"
+          ]
+        }
+      }
+    },
+    "inputs": {
+      "cell_score_csv": "data/mouse/cell_level_z/B16_OT1_tumor_joint_fig1e_cell_z.csv",
+      "drift_checkpoint": "MultiNeD/outputs/notebook_drift_run/drift_model.pt",
+      "group_info_csv": "data/mouse/group_distributions/B16_OT1_tumor_joint_zstd_group_info.csv",
+      "group_pkl": "data/mouse/group_distributions/B16_OT1_tumor_joint_zstd_group_distributions.pkl",
+      "q_in_npy": "MultiNeD/outputs/reaction_coupled_run/q_in_precursor_empirical.npy",
+      "reaction_checkpoint": "MultiNeD/outputs/reaction_coupled_run/reaction_coupled_model.pt",
+      "reaction_parameter_settings": "MultiNeD/outputs/reaction_coupled_run/reaction_parameter_settings.json",
+      "transition_csv": "data/mouse/manifests/B16_OT1_tumor_joint_transition_manifest_temporal.csv",
+      "volume_csv": "data/mouse/source_metadata/paper_tumor_volume_long.csv"
+    },
+    "output": {
+      "root": "MultiNeD/outputs/volume_loto"
+    },
+    "profile": "full",
+    "reaction": {
+      "device": "cuda:0",
+      "dt": 0.1,
+      "n_epochs": 600,
+      "n_particles": 512,
+      "print_every": 20,
+      "sinkhorn_iters": 60,
+      "train_drift": false
+    },
+    "schema_version": 1,
+    "seed": 20260816
+  },
+  "config_source": "./MultiNeD/configs/benchmarking/cell_loto_benchmark.json",
+  "description": "Unified seven-method shared treatment-conditioned Reaction-style LOTO benchmark.",
+  "evaluation": {
+    "device": "cuda:0",
+    "energy_max_points": 512,
+    "n_particles": 256,
+    "sinkhorn_epsilon": 0.08,
+    "sinkhorn_iters": 60
+  },
+  "method_settings": {
+    "entropic_ot_barycentric": {
+      "epsilon": 0.08,
+      "knn": 8,
+      "n_support": 256
+    },
+    "mioflow": {
+      "batch_size": 256,
+      "device": "cuda:0",
+      "energy_time_steps": 10,
+      "epochs": 300,
+      "external_repo_env": "MIOFLOW_REPO",
+      "grad_clip": 1.0,
+      "hidden_dim": 64,
+      "lambda_density": 0.1,
+      "lambda_energy": 0.01,
+      "lambda_ot": 1.0,
+      "learning_rate": 0.001,
+      "max_points_per_timepoint": 512,
+      "python_env": "MIOFLOW_PYTHON",
+      "timeout_seconds": 86400
+    },
+    "official_ot_cfm": {
+      "depth": 2,
+      "device": "cuda:0",
+      "epochs": 300,
+      "external_repo_env": "OTCFM_REPO",
+      "grad_clip": 5.0,
+      "hidden_dim": 64,
+      "integration_steps_per_day": 4,
+      "learning_rate": 0.001,
+      "pairs_per_transition": 256,
+      "print_every": 25,
+      "python_env": "OTCFM_PYTHON",
+      "sigma": 0.0,
+      "timeout_seconds": 86400,
+      "weight_decay": 1e-05
+    },
+    "project_balanced_sinkhorn_drift": {
+      "device": "cuda:0",
+      "n_epochs": 800,
+      "n_max": 256,
+      "print_every": 20,
+      "sinkhorn_iters": 60
+    },
+    "tigon": {
+      "activation": "Tanh",
+      "device": "cuda:0",
+      "external_repo_env": "TIGON_REPO",
+      "hidden_dim": 32,
+      "iterations": 300,
+      "learning_rate": 0.003,
+      "max_points_per_timepoint": 256,
+      "n_hiddens": 4,
+      "num_samples": 64,
+      "python_env": "TIGON_PYTHON",
+      "timeout_seconds": 86400
+    },
+    "treatment_linear_shift": {
+      "ridge": 0.001,
+      "time_scale": 15.0
+    }
+  },
+  "methods": [
+    "persistence",
+    "treatment_linear_shift",
+    "entropic_ot_barycentric",
+    "project_balanced_sinkhorn_drift",
+    "mioflow",
+    "tigon",
+    "official_ot_cfm"
+  ],
+  "output_root": "MultiNeD/outputs/cell_loto_benchmark",
+  "profile": "full",
+  "schema_version": 2,
+  "seeds": [
+    20260816
+  ],
+  "splits": {
+    "expected_fold_count": 6,
+    "expected_target_groups": [
+      "day4__Control",
+      "day6__Control",
+      "day4__AntiPD1",
+      "day6__AntiPD1",
+      "day6__Anti41BB",
+      "day6__AntiPD1plusAnti41BB"
+    ],
+    "mode": "shared_conditional_loto",
+    "source_group": "day1__Control"
+  },
+  "z_standardization_by_split": {
+    "shared_conditional_loto__Anti41BB__day6__Anti41BB": {
+      "mean": [
+        0.5739466974668025,
+        0.690045527785629,
+        0.5222344281881497,
+        0.5369461886387729,
+        0.590612150852292
+      ],
+      "n_training_cells": 52075,
+      "scale": [
+        0.29806256355517863,
+        0.29581790578607964,
+        0.3215461266673607,
+        0.33304683140162344,
+        0.2887086446946698
+      ],
+      "z_cols": [
+        "P_precursor_zstd",
+        "Activation_zstd",
+        "Eff_Early_zstd",
+        "Eff_Cytox_zstd",
+        "Dysf_zstd"
+      ]
+    },
+    "shared_conditional_loto__AntiPD1__day4__AntiPD1": {
+      "mean": [
+        0.5660177699241851,
+        0.6834354346278585,
+        0.5178396670672871,
+        0.5376792648918259,
+        0.5893632769177674
+      ],
+      "n_training_cells": 50577,
+      "scale": [
+        0.29579952985220614,
+        0.29458662200114466,
+        0.3200711535004609,
+        0.3369186743688873,
+        0.2908863755201957
+      ],
+      "z_cols": [
+        "P_precursor_zstd",
+        "Activation_zstd",
+        "Eff_Early_zstd",
+        "Eff_Cytox_zstd",
+        "Dysf_zstd"
+      ]
+    },
+    "shared_conditional_loto__AntiPD1__day6__AntiPD1": {
+      "mean": [
+        0.5570627478722342,
+        0.6660117770998913,
+        0.5177116825756166,
+        0.5219114258291784,
+        0.5704382930018994
+      ],
+      "n_training_cells": 46829,
+      "scale": [
+        0.2954557816716168,
+        0.2896300636934137,
+        0.32686063937798016,
+        0.32764449230978115,
+        0.2838595970790926
+      ],
+      "z_cols": [
+        "P_precursor_zstd",
+        "Activation_zstd",
+        "Eff_Early_zstd",
+        "Eff_Cytox_zstd",
+        "Dysf_zstd"
+      ]
+    },
+    "shared_conditional_loto__AntiPD1plusAnti41BB__day6__AntiPD1plusAnti41BB": {
+      "mean": [
+        0.5751041401576654,
+        0.6895036528108763,
+        0.5167874620178163,
+        0.5317721720662317,
+        0.5893660810189982
+      ],
+      "n_training_cells": 51807,
+      "scale": [
+        0.29825867742155676,
+        0.2957454192500144,
+        0.3183122490363549,
+        0.3275810738819119,
+        0.2880333808643936
+      ],
+      "z_cols": [
+        "P_precursor_zstd",
+        "Activation_zstd",
+        "Eff_Early_zstd",
+        "Eff_Cytox_zstd",
+        "Dysf_zstd"
+      ]
+    },
+    "shared_conditional_loto__Control__day4__Control": {
+      "mean": [
+        0.5636117146615898,
+        0.6814334285817606,
+        0.5221822950783042,
+        0.5401131246417222,
+        0.5893540465382673
+      ],
+      "n_training_cells": 50585,
+      "scale": [
+        0.2961299291692634,
+        0.2943063392396539,
+        0.32369949294216793,
+        0.3383950617531102,
+        0.2910988583548221
+      ],
+      "z_cols": [
+        "P_precursor_zstd",
+        "Activation_zstd",
+        "Eff_Early_zstd",
+        "Eff_Cytox_zstd",
+        "Dysf_zstd"
+      ]
+    },
+    "shared_conditional_loto__Control__day6__Control": {
+      "mean": [
+        0.55281729971979,
+        0.6892549352437747,
+        0.544687149907759,
+        0.5590036313048851,
+        0.5995363749201214
+      ],
+      "n_training_cells": 45734,
+      "scale": [
+        0.29234706603418736,
+        0.2978833034153202,
+        0.326512315100781,
+        0.34093436030082763,
+        0.2943476187977482
+      ],
+      "z_cols": [
+        "P_precursor_zstd",
+        "Activation_zstd",
+        "Eff_Early_zstd",
+        "Eff_Cytox_zstd",
+        "Dysf_zstd"
+      ]
+    }
+  }
+}

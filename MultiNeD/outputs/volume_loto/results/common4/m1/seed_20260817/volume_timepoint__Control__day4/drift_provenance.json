@@ -1,0 +1,9 @@
+{
+  "effective_checkpoint": "MultiNeD/outputs/volume_loto/results/common4/m1/seed_20260817/volume_timepoint__Control__day4/drift_model.pt",
+  "heldout_z_groups": [
+    "day4__Control"
+  ],
+  "refit": true,
+  "source_checkpoint": "MultiNeD/outputs/notebook_drift_run/drift_model.pt",
+  "strategy": "matching_z_only"
+}

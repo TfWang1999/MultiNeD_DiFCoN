@@ -1,0 +1,90 @@
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mplconfig/
+.local/
+reproduction/
+MultiNeD/outputs/*/reproduce_*/
+DiFCoN/outputs/release_smoke/
+human_validation/runs/
+# Downloaded third-party inputs and local exported single-cell matrices.
+human_validation/**/inputs/
+human_validation/**/data/
+human_validation/resources/*.gz
+*.gmt
+*.probemap
+# Legacy full trajectory archives; paper perturbation metrics are tracked.
+dynamics_analysis/outputs/**/full_trajectories_*.npz
+.env
+.env.*
+*.pem
+*.key
+
+# Local-only analyses not presented in the manuscript.
+/MultiNeD/outputs/reaction_uot_common4_v1/
+/MultiNeD/outputs/reaction_structure_robustness_common4_v1/
+/MultiNeD/outputs/reaction_structure_full_data_v1/
+/MultiNeD/outputs/reaction_identifiability_v1/
+/MultiNeD/figure_work/source_data/structure_loto_predictions.csv
+/MultiNeD/figure_work/tables/structure_loto_predictions.csv
+/MultiNeD/figure_work/source_data/multistart_parameters.csv
+/MultiNeD/figure_work/tables/multistart_parameters.csv
+/MultiNeD/figure_work/source_data/bootstrap_parameters.csv
+/MultiNeD/figure_work/tables/bootstrap_parameters.csv
+/MultiNeD/figure_work/source_data/identifiability_predictions.csv
+/MultiNeD/figure_work/tables/identifiability_predictions.csv
+/MultiNeD/figure_work/source_data/profile_objectives.csv
+/MultiNeD/figure_work/tables/profile_objectives.csv
+/MultiNeD/figure_work/tables/bootstrap_parameter_spearman.csv
+/MultiNeD/figure_work/tables/parameter_uncertainty_summary.csv
+
+# UOT loss ablation and superseded workbook: local-only.
+/MultiNeD/outputs/training_loss_ablation/**/uot_local_rollout_pretrained/
+/supplementary/figure/supplementary/*_Supplementary_Tables_ST1_ST5.xlsx
+
+# Local preparation records; not required for paper experiments.
+/docs/README.md
+/docs/CODE_README.md
+/MultiNeD/notebooks/model_equations_parameter_table.md
+/human_validation/METHODS.md
+/dynamics_analysis/METHODS.md
+/MultiNeD/drift_network_architecture.md
+/MultiNeD/experiments/benchmarks/compute_wasserstein1.py
+/docs/RELEASE_CHANGES.md
+/docs/snapshot_provenance.json
+/docs/validation_report.json
+/docs/environment-cleanroom.json
+/VALIDATION.md
+/environment-tested.json
+/.vscode/launch.json
+/.vscode/settings.json
+
+# Local figure-preparation history. See docs/REPRODUCIBILITY.md for the current workflow.
+/MultiNeD/figure_work/docs/FIXED_SOURCE_DATA.md
+/MultiNeD/figure_work/docs/FILE_RENAMES.csv
+/MultiNeD/figure_work/docs/METHODS_AND_STATISTICS.md
+
+# Superseded figure-export bookkeeping; numerical source tables remain tracked.
+/MultiNeD/figure_work/source_manifest.csv
+/supplementary/figure/supplementary/human_validation/panel_manifest.csv
+/supplementary/figure/supplementary/human_validation/source_data/source_manifest.csv
+
+# Superseded loss-ablation accounting and failure logs: local-only.
+/MultiNeD/outputs/training_loss_ablation/**/fit_accounting.csv
+/MultiNeD/outputs/training_loss_ablation/**/all_fit_accounting.csv
+/MultiNeD/outputs/training_loss_ablation/**/compute_summary.csv
+/MultiNeD/figure_work/source_data/full_data_fit_accounting.csv
+/MultiNeD/outputs/**/failure_log.json
+/DiFCoN/outputs/**/failure_log.json
+/DiFCoN/outputs/**/failure_log.csv
+
+# Old policy plot tables and unused human-validation intermediates.
+/DiFCoN/outputs/baseline/seed_2031/tables/plot_data/
+/supplementary/figure/supplementary/human_validation/source_data/TCGA_saved_paired_Cindex_differences.csv
+/supplementary/figure/supplementary/human_validation/source_data/liu_endpoint_alignment.csv
+/supplementary/figure/supplementary/human_validation/source_data/liu_weight_bootstrap.csv
+/supplementary/figure/supplementary/human_validation/source_data/liu_weight_comparison.csv
+/supplementary/figure/supplementary/human_validation/source_data/tcga_benchmark_intervals.csv
+/supplementary/figure/supplementary/human_validation/source_data/table_s3_sources.csv

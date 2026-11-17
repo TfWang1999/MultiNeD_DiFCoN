@@ -1,0 +1,9 @@
+# Preserve scientific artifacts byte-for-byte across Windows and Linux.
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.svg -whitespace
+*.sh text eol=lf
+*.bash text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf

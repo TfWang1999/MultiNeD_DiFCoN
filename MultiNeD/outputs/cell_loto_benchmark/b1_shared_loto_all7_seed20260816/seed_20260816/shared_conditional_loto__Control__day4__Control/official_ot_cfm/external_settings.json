@@ -1,0 +1,13 @@
+{
+  "epochs": 300,
+  "pairs_per_transition": 256,
+  "hidden_dim": 64,
+  "depth": 2,
+  "learning_rate": 0.001,
+  "weight_decay": 1e-05,
+  "sigma": 0.0,
+  "grad_clip": 5.0,
+  "integration_steps_per_day": 4,
+  "device": "cuda:0",
+  "print_every": 25
+}

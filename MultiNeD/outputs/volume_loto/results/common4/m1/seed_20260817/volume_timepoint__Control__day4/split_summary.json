@@ -1,0 +1,42 @@
+{
+  "cv_seed": 20260817,
+  "fold_index": 0,
+  "heldout_days": [
+    4.0
+  ],
+  "heldout_groups": [
+    "day4__Control"
+  ],
+  "heldout_treatments": [
+    "Control"
+  ],
+  "kind": "volume_timepoint",
+  "split_id": "volume_timepoint__Control__day4",
+  "train_group_count": 20,
+  "train_transition_count": 18,
+  "train_volume_row_count": 145,
+  "z_standardization": {
+    "mean": [
+      0.5636117146615898,
+      0.6814334285817606,
+      0.5221822950783042,
+      0.5401131246417222,
+      0.5893540465382673
+    ],
+    "n_training_cells": 50585,
+    "scale": [
+      0.2961299291692634,
+      0.2943063392396539,
+      0.32369949294216793,
+      0.3383950617531102,
+      0.2910988583548221
+    ],
+    "z_cols": [
+      "P_precursor_zstd",
+      "Activation_zstd",
+      "Eff_Early_zstd",
+      "Eff_Cytox_zstd",
+      "Dysf_zstd"
+    ]
+  }
+}

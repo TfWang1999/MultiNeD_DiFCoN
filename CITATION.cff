@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite this software snapshot and the associated manuscript when available."
+type: software
+title: "Multiscale Neural–mechanistic Dynamics and Differentiable Feedback–Control Network"
+license: MIT
+repository-code: "https://github.com/TfWang1999/MultiNeD_DiFCoN"
+authors:
+  - family-names: Wang
+    given-names: Tengfei

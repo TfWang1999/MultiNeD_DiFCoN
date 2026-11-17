@@ -1,0 +1,7 @@
+{
+  "state": "completed",
+  "updated_at_utc": "2026-11-12T16:39:51.656293+00:00",
+  "run_name": "dose_weight_0p75_seed_2031",
+  "best_epoch": 200,
+  "best_validation_loss": 2.05790376663208
+}

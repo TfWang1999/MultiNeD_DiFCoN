@@ -1,0 +1,153 @@
+{
+  "base_validation_config": "MultiNeD/configs/validation/volume_loto_base.json",
+  "base_validation_resolved": {
+    "config_source": "./MultiNeD/configs/validation/volume_loto_base.json",
+    "description": "Reaction-only stage-1 leave-one-volume-timepoint-out CV with balanced Sinkhorn distribution loss.",
+    "drift": {
+      "device": "cuda:0",
+      "n_epochs": 200,
+      "n_max": 256,
+      "n_steps_per_day": 10,
+      "print_every": 20,
+      "sinkhorn_iters": 60
+    },
+    "evaluation": {
+      "n_particles": 512,
+      "robust_quantiles": [
+        0.01,
+        0.99
+      ],
+      "sinkhorn_epsilon": 0.08,
+      "sinkhorn_iters": 60,
+      "z_scale": "robust01"
+    },
+    "experiments": {
+      "m1": {
+        "volume_timepoint_cv": {
+          "days": [
+            4,
+            6,
+            10,
+            14,
+            17
+          ],
+          "seeds": [
+            20260816,
+            20260817,
+            20260818
+          ],
+          "treatments": [
+            "Control",
+            "Anti-PD1",
+            "Anti-41BB",
+            "Anti-PD1+Anti-41BB"
+          ]
+        }
+      }
+    },
+    "inputs": {
+      "cell_score_csv": "data/mouse/cell_level_z/B16_OT1_tumor_joint_fig1e_cell_z.csv",
+      "drift_checkpoint": "MultiNeD/outputs/notebook_drift_run/drift_model.pt",
+      "group_info_csv": "data/mouse/group_distributions/B16_OT1_tumor_joint_zstd_group_info.csv",
+      "group_pkl": "data/mouse/group_distributions/B16_OT1_tumor_joint_zstd_group_distributions.pkl",
+      "q_in_npy": "MultiNeD/outputs/reaction_coupled_run/q_in_precursor_empirical.npy",
+      "reaction_checkpoint": "MultiNeD/outputs/reaction_coupled_run/reaction_coupled_model.pt",
+      "reaction_parameter_settings": "MultiNeD/outputs/reaction_coupled_run/reaction_parameter_settings.json",
+      "transition_csv": "data/mouse/manifests/B16_OT1_tumor_joint_transition_manifest_temporal.csv",
+      "volume_csv": "data/mouse/source_metadata/paper_tumor_volume_long.csv"
+    },
+    "output": {
+      "root": "MultiNeD/outputs/volume_loto"
+    },
+    "profile": "full",
+    "reaction": {
+      "device": "cuda:0",
+      "dt": 0.1,
+      "n_epochs": 600,
+      "n_particles": 512,
+      "print_every": 20,
+      "sinkhorn_iters": 60,
+      "train_drift": false
+    },
+    "schema_version": 1,
+    "seed": 20260816
+  },
+  "config_source": "./MultiNeD/configs/benchmarking/cell_reconstruction_benchmark.json",
+  "description": "Six-method full-data rollout reconstruction from the shared Control day 1 baseline.",
+  "evaluation": {
+    "device": "cuda:0",
+    "energy_max_points": 512,
+    "n_particles": 256,
+    "sinkhorn_epsilon": 0.08,
+    "sinkhorn_iters": 60
+  },
+  "method_settings": {
+    "entropic_ot_barycentric": {
+      "epsilon": 0.08,
+      "knn": 8,
+      "n_support": 256
+    },
+    "mioflow": {
+      "batch_size": 256,
+      "device": "cuda:0",
+      "energy_time_steps": 10,
+      "epochs": 300,
+      "external_repo_env": "MIOFLOW_REPO",
+      "grad_clip": 1.0,
+      "hidden_dim": 64,
+      "lambda_density": 0.1,
+      "lambda_energy": 0.01,
+      "lambda_ot": 1.0,
+      "learning_rate": 0.001,
+      "max_points_per_timepoint": 512,
+      "python_env": "MIOFLOW_PYTHON",
+      "timeout_seconds": 86400
+    },
+    "official_ot_cfm": {
+      "device": "cuda:0"
+    },
+    "project_balanced_sinkhorn_drift": {
+      "device": "cuda:0",
+      "use_paper_pretraining": true
+    },
+    "tigon": {
+      "activation": "Tanh",
+      "device": "cuda:0",
+      "external_repo_env": "TIGON_REPO",
+      "hidden_dim": 32,
+      "iterations": 300,
+      "learning_rate": 0.003,
+      "max_points_per_timepoint": 256,
+      "n_hiddens": 4,
+      "num_samples": 64,
+      "python_env": "TIGON_PYTHON",
+      "timeout_seconds": 86400
+    },
+    "treatment_linear_shift": {
+      "ridge": 0.001,
+      "time_scale": 15.0
+    }
+  },
+  "methods": [
+    "persistence",
+    "treatment_linear_shift",
+    "entropic_ot_barycentric",
+    "project_balanced_sinkhorn_drift",
+    "mioflow",
+    "tigon"
+  ],
+  "output_root": "MultiNeD/outputs/cell_reconstruction_benchmark",
+  "profile": "full",
+  "schema_version": 2,
+  "seeds": [
+    20260817
+  ],
+  "splits": {
+    "expected_counts": {
+      "evaluation_target_count": 20,
+      "training_group_count": 21,
+      "training_transition_count": 20
+    },
+    "mode": "distribution_full_data_joint"
+  }
+}
